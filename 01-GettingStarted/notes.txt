@@ -1,0 +1,57 @@
+Python created by  Guido Van Rossum in 1985-1990 which has succeeded the ABC programming language.
+It was finally released on 1991
+The name Python is inspired from TV show called 'Monty Python flying circus'
+It is an object-oriented, general purpose, high level programming language
+Python's bulk libraries are very portable and cross platform compatible
+python is an dynamic,interpreted(byte-code compiled) language
+
+Types of programmng languages
+------------------------------
+1. Compiled language:
+----------------------
+    Language --> Machine code --> Ready to run
+
+    Compiled languages are coverted directly into machine code that processor can execute y the compiler.
+    It need a 'build' step that is they need to be compiled manually first for everytime there is a change
+    Eg. C,C++,Rust,Go etc
+    A program will not execute untill all errors which are pointed out during building are fixed
+
+2. Interpreted language:
+-------------------------
+    Language --> Ready to run --> Virtual Machine --> Machine code
+
+    Interpreters run through a program line by line and execute each command.
+    Eg. PHP, Ruby, Python, Javascript 
+    It starts running the code even if there are errors in your program. 
+    At each encountered error, execution of the program would stop with the error message highlighting the reason behind the issue 
+
+
+Versions:
+----------
+
+1. Python 2.X (eg 2.7, 2.8, ...)
+2. Python 3.X (eg 3.7, 3.8, ...)
+
+
+Applications:
+--------------
+
+1. Web Development  
+    not a good choice for Front-end but for back-end development using framworks such as Django, Flask
+    Django used for full fledged heavy weight applications and Flask used for light weight applications
+2. App Development (both mobile and desktop)
+    Kivy is used to develop cross platofor mobile applications
+3. Data Science
+4. Machine Learning
+    Libraries such as Keras, Sci-kit learn etc used for creating very powerful ML models 
+5. Internet of Things
+6. Embedded programming
+7. Computer vision
+8. Automation etc...
+
+Real life Use Case:
+-------------------
+
+ForecastWatch.com is the business of rating then accuracy of weather reports from Accuweather, MyForecast.com and The Weather Channel
+ForecastWatch.com is a 100% pure Python solution.
+It's web interface was originally written in PHP but later changed to Python
