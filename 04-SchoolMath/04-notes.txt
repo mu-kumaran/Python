@@ -1,0 +1,93 @@
+Operators
+---------
+1. Arithmetic Operators
+2. Relational Operators
+3. Logical Operators
+4. Membership and Identity Operators
+5. Bitwise Operators
+6. Walrus Operators
+
+Arithmetic Operator:
+--------------------
+- Addition +, Subtraction -, Multiplication *,Division /, Modulus %, Exponent ** and Floor division //
+
+eg. a=35
+    b=18
+    res1=a+b 
+    print("a = ",a," b = ",b)
+    print("Addition is ",res1)
+    print("Subtraction is ",a-b)
+    print("Multiplication is ",a*b)
+    print("a/b = ",a/b)
+    print("a modulus b = ",a%b)
+    print("Floor division is ",a//b)
+    print("Exponential is ",a**b)
+
+Comparison Operator:
+--------------------
+- Greater than >, Less than <, Equal to  ==, Not equal to !=
+- Greater than or equal to >=, Less than or equal to <=
+- returns a boolean value
+
+eg. age = 18
+    reqd_age = 36
+
+    print(age>reqd_age)
+    print(age<reqd_age)
+    print(age == reqd_age)
+    print(age != reqd_age)
+
+Logical Operators
+-----------------
+- and --> returns True if both of the operand is true
+- or --> returns True if either of the operand is true
+- not --> returns True if operand is false and vice versa
+- returns a boolean value
+
+eg. x = True
+    y = False
+    print('x = ',x,' y = ',y)
+    print('x and y is ',x and y)
+    print('x or y is ',x or y)
+    print('not x is ', not x)
+    print('not y is ', not y)
+
+    num1 = 5
+    num2 = 8
+    print(num1>num2 or num1<num2)
+
+Membership Operator:
+--------------------
+in --> return True if the value is found in the sequence and vice versa
+not in --> return True if the value is not found in the sequence and vice versa 
+
+eg. name = 'manoj'
+    print('a' in name)
+    print('x' in name)
+    print('m' not in name)
+    print('y' not in name)
+
+Identity Operator:
+-------------------
+- used for checking if two values are located in the same part of the memory
+- id() returns the memory address
+- is --> returns True if the operands are identical (refers to the same object)
+- not is -->  returns True if the operands are not identical (do not refer to the same object)
+
+eg. num1 = 5
+    num2 = 5
+    num3 = 6
+    print(id(num1))
+    print(id(num2))
+    print(id(num3))
+    print(num1 is num2)
+    print(num1 is num3)
+
+Walrus Operator (:=):
+----------------
+- name := expr
+
+eg. name = 'manoj'
+    print(name)
+    print(name1:='ganesh')
+    print(name1+name)

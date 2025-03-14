@@ -1,0 +1,87 @@
+Variables
+----------
+
+country = "India"
+name="mano"
+print(country)
+print(name)
+
+Rules for declaring variable name
+---------------------------------
+A variable names
+
+- must start with a letter or underscore character
+    eg. name, _country, _num, num_1 etc.
+- cannot start with number
+- can only contain alpha-numeric characters and underscores (A-Z,a-z,0-9 and _ )
+- are case-sensitive
+    eg. Country, country, Name, name, _num, _Num are different Variables
+- A Value, if it is a word or character must be enclosed in single or double quotes
+
+mobile_brand = "samsung"
+print(mobile_brand)
+
+Data Types
+-----------
+
+1. Numeric Type
+2. Sequence Type (string)
+3. Boolean
+4. Sets
+5. Mapping Type (Dictionary)
+
+Numeric Type
+------------
+
+- Integer
+    eg. number = 25, age = 26
+- Floating point
+    eg. Temperature = 35.6, rateOfInterest = 6.5
+- Complex 
+    a + bj where a and b are real numbers and j is imaginary part satisfies eqn j^2 = -1
+    eg. number = 5+3j
+
+string Type
+------------
+- A Sequence of characters which is internally stored and manipulated a combination of 0's and 1's in computer
+- Encoding - conversion of character to number and reverse is Decoding
+- ASCII and Unicode are some popular encodings used
+- In Python string is a Sequence of Unicode characters
+    eg. Language = "Python"
+
+- #multi-line string
+
+quote = """ Lore ipsum  adsfkj asfasdfjkndf adsdsv asdloijlkmae aer vpkj v aesfjkzxcv aesfASDFJNV ASDFJNMADFLKXCasdfgxcv 
+asdfklm asdfkmnd  APOEKJCDVM  asefmsdf asdfj PEOFMASDF pomja EPOK A;EMASDFGLK DFSA;PSVC[Pl P;[ASJDF ASDLKMVNMLASEF ASDLK]]
+ASDLKMN ;lj;lkm., b;p;olmkas, ;[a;lmdf ;as;dllmads;lm mgp;okja;lmds ;ljmasd;f dscv;lmj., ;lmasd;lm,ac;.,mvjasdf;lmdsf;lmd]
+"""
+
+print(quote)
+
+Multi line string gets stored and printed in same format as we entered
+
+Boolean Type - bool
+---------------------
+- Used to store value either True or False
+    eg. isLoggedIn = True, isRainy = False
+
+type()
+--------
+- returns the datatype of the variable
+    eg. name-='mano213' 
+        type(name) --> string
+
+input()
+-------
+- to read the user input from the keyboard
+    eg. name = input("Enter your name") 
+        print(name)
+- input() function always accept the input as a string
+
+type conversion method
+-------------------------
+- int(), float(), bool(), complex() are type conversion methods
+
+    eg. age = int(input("Enter your age: "))
+        print(age)
+        print(type(age))
