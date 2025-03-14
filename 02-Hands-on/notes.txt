@@ -1,0 +1,54 @@
+Python installation:
+--------------------
+1. Download latest release of python (say as eg. python 3.13.2) from python.org 
+(note: Download installer according to your windows system whether 32 bit or 64 bit)
+
+2. After downloading, double click the installer
+
+3. Check ADD PYTHON 3.X to PATH and click install now
+
+4. To check the installation, open cmd and type python and enter
+
+5. It displays the python version and  take you to python shell with symbol >>>
+
+6. This means you are in python shell and it was installed successfully
+
+7. Python IDLE an IDE will come as add on by default while installing python
+
+IDE's
+-----
+
+1. IDLE
+
+2. Pycharm
+
+3. VS Code
+
+Programming
+-----------
+
+save python file with extension .py (eg- hello.py)
+
+run program in python IDLE using RUN --> Run module or F5
+
+print command
+-------------
+# Below is the code to print 
+print('Hello world')
+
+comments
+--------
+
+# comment section
+
+"""
+Multi-line comment section................
+.................................
+................................
+..................................
+
+"""
+
+
+
+
