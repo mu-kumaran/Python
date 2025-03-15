@@ -1,0 +1,93 @@
+Importing modules
+-----------------
+- Modules are pre-written codes
+
+syntax:
+-------
+ import module_name
+ from module_name import something
+
+Math module:
+------------
+- conforms to C language standard
+- includes trignometric functions, representation functions, log functions, angle conversion functions etc..
+- Some Important math functions are:
+    1. ceil(x) - returns smallest integer greater than or equal to x
+    2. floor(x) - returns the largest integer less than or equal to x
+    3. fabs(x) - returns the absolute value of x
+    4. factorial(x) - returns the factorial of x
+    5. fmod(x,y) - returns the remainder when x is divided by y
+    6. log2(x) - returns the base-2 logarithm of x
+    7. log10(x) - returns the base-10 logarithm of x
+    8. sqrt(x) - returns the square root of x
+    9. trunc(x) - returns the truncated integer value of x
+    10. pow(x,y) - returns the x raised to the power y  
+
+syntax:
+------
+import math
+math.function()
+
+eg. import math
+    print(math.sqrt(4))
+    print(math.fabs(-5))
+    print(math.floor(4.6))
+    print(math.ceil(4.3))
+    print(math.pow(2,2))
+    print(math.trunc(7.999))
+
+Trignometric functions:
+----------------------
+
+sin(x) - Returns the sine of x in radians
+cos(x) - Returns the cosine of x in radians
+tan(x) - Returns the tangent of x in radians
+degrees(x) - Converts angle x from radians to degrees
+radians(x) - Converts angle x from degrees to radians
+
+eg. import math
+    print(math.sin(0))
+    print(math.sin(3))
+    print(math.tan(3))
+    print(math.cos(3))
+    print(math.degrees(3))
+    print(math.radians(45))
+
+Mathematical constants:
+-----------------------
+- pi, tau, Euler's number, Infinity
+print(math.pi)
+print(math.tau)   # tau = 2pi
+print(math.e)
+print("Positive infinity-",math.inf)
+print("Negative infinity-",-math.inf)
+
+Random :
+-----------------
+seed(x) - Initialize the random number generator
+randrange(x,y,step) - returns a random number between given range with step size
+randint(x,y) - returns a random number between given range
+choice(sequence) - returns the random element from the given sequence
+shuffle(sequence) - takes the sequence and returns the sequence in a random order
+random() - Returns the random float number between 0 and 1 
+
+eg. import random
+    print("Random functions")
+    print(random.random())
+    print(random.randint(1,100))
+    print(random.randrange(1,10))
+    print(random.randrange(1,10,2))
+
+    # understanding step size in randrange
+    # values are kept apart by step size w
+    # Here 10 is the limit where output always produced lesser than the limit
+    print("With step size 2") # possible values 1,3,5,7,9
+    print(random.randrange(1,10,2))
+    print(random.randrange(1,10,2))
+    print(random.randrange(1,10,2))
+    print(random.randrange(1,10,2))
+    print("With step size 3") # possible values 1,4,7
+    print(random.randrange(1,10,3))
+    print(random.randrange(1,10,3))
+    print(random.randrange(1,10,3))
+    print(random.randrange(1,10,3))
