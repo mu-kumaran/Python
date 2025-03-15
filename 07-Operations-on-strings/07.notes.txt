@@ -1,0 +1,125 @@
+Formatting strings:
+-------------------
+- Strings are immutable
+
+general method using comma(,):
+-----------------------------
+user = "manoj"
+print("Hello",user)
+
+using str.format with curly braces {}:
+--------------------------------------
+name = input("Enter your name: ")
+age = int(input("Enter your age: "))
+print(("Hello, {}. You are {} years old").format(name,age))
+
+Format placeholders:
+--------------------
+- The placeholders can be identified using named indexes{fname}, numbered indexes {0}{1}{2}..., or even empty indexes {}
+- Indexes are basically the count that starts from zero for the parameters passed to format() method
+
+eg. string1 = "My name is {fname}, I am {age} years old".format(fname="manoj",age=33) 
+    string2 = "My name is {0}, I am {1} years old".format("manoj",33) 
+    string3 = "My name is {}, I am {} years old".format("manoj",33) 
+
+    print(string1)
+    print(string2)
+    print(string3)
+
+fStrings:
+---------
+- literal string prefixed with 'f' contains expressions inside braces 
+- expressions evaluated at run time
+syntax:
+-------
+f"string values{expression}..."
+
+note: There should not be any gap between letter 'f' and string values
+
+eg. print("f-strings:")
+    name = input("Enter your name: ")
+    print(f"Hello,{name}!")
+
+    num1 = 10
+    num2 = 5
+    print(f"Ten plus five equals {num1+num2}")
+
+Index concept (Accessing values):
+--------------
+- An index is an numerical representation of an item's position in a sequence
+- Index always starts with number '0'
+
+syntax:
+-------
+variable_name[index_number]
+
+ p y t h o n  
+ 0 1 2 3 4 5
+eg. appName = 'PythonX'
+    print(appName[0])
+    print(appName[1])
+    print(appName[2])
+    print(appName[3])
+
+Negative indexing:
+------------------
+- indexing starts from the end of the string with value -1
+
+  p  y  t  h  o  n
+ -6 -5 -4 -3 -2 -1
+
+ eg. appName = 'PythonX'
+     print(appName[-1])
+     print(appName[-2])
+     print(appName[-3])
+     print(appName[-4])
+
+String slicing:
+---------------
+- getting substring using slicing method
+
+syntax:
+-------
+string_name[start:end:step]
+
+start index - included
+end index - excluded
+
+eg. appName = 'PythonX'
+    print(appName[:])
+    print(appName[::])
+    print(appName[:4])
+    print(appName[2:5])
+    print(appName[3:])
+    print(appName[::2])
+
+
+Operations on strings:
+-----------------------
+1. concatenation
+2. Repetition
+
+Concatenation:
+--------------
+ - addition or joining of strings using 
+    1. '+' operator
+    2. join() method
+
+eg. firstname = "John"
+    lastname = "Doe"
+    fullname = firstname +" "+ lastname
+    print(fullname) 
+    print("".join([firstname,lastname]))
+
+Repetition:
+-----------
+- multiplication of string by some integer values
+- *operator is used for performing string repetition
+
+eg. str = "python"
+    print(str*2)
+
+String methods:
+---------------
+- various methods to manipulate strings
+    1. 
