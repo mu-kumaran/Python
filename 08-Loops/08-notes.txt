@@ -66,3 +66,17 @@ eg. To print only 'Good' in the word 'Goodmorning'
             break
         else:
             print(i)
+
+for-else statement:
+-------------------
+- if the else statement is used with for loop, then the else statement is sexecuted when the loop has
+  exhausted iterating the list
+
+eg. str = "Goodmorning"
+    letter = input("Enter the character you want to find in the given string:") 
+    for i in str:
+        if(i==letter):
+            print(letter,"found")
+            break
+    else:
+        print("letter not found")  

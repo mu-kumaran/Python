@@ -42,4 +42,12 @@ for i in str:
     else:
         print(i)
     
- 
+ # for-else statement
+print(str)
+letter = input("Enter the character you want to find in the given string:") 
+for i in str:
+    if(i==letter):
+        print(letter,"found")
+        break
+else:
+    print("letter not found")

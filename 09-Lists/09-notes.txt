@@ -1,0 +1,158 @@
+Lists
+-----
+- an ordered data structure in python, a sequence type like a string
+- allows us to store multiple values of different data types in a single variable
+- mutable and allows to store duplicate values
+
+syntax:
+-------
+var_name = [var1,var2,var3....]
+
+eg. list1 = [1,2,3,"John",45.6,53.0,True]
+
+    coursesEnrolled = ['python','ruby','java']
+    print(coursesEnrolled)
+
+Manipulating lists:
+-------------------
+1. Accessing elements of a list
+2. List slicing
+3. Updating a list
+4. Deleting elements from a list
+
+Accessing elements:
+------------------
+- Accessing elements using indices
+
+eg. names        =         ["John",'Sam','Barry','Lin']
+    #indices     =             0     1      2      3
+    #-ve indices =            -4    -3     -2     -1
+    print(names)
+    print(names[0])
+    print(names[3])
+    print(names[-1])
+    print(names[-3])
+
+List slicing:
+-------------
+- works same way as it does with strings
+
+eg. names = ["John",'Sam','Barry','Lin']
+    print(names)
+    print(names[1:3])
+    print(names[2:])
+
+Updating lists:
+---------------
+- Done using assignment operator "="
+
+eg. marks = [56,76,69,71,39]
+    marks[4] = 43
+    print(marks)
+
+Deleting lists:
+--------------
+- using del statement if we know the index number of the elements
+
+eg. names = ["John",'Sam','Barry','Lin']
+    print(names)
+    del names[1]
+    print(names)
+
+    # deleting whole list
+    del names
+
+Operations on lists
+-------------------
+- Quite similar to strings
+1. Concatenation
+2. Repetition
+3. Membership
+
+Concatenation and Repetition:
+-----------------------------
+- concatenation and repetition done by '+' and '*' operator
+
+eg. list1 = [1,2,3,"manoj"]
+    list2 = [4,5,6,"Kumar"]
+    list_add = list1+list2
+    list_repeat = list1*3
+
+    print(list_add)
+    print(list_repeat)
+
+Membership operator:
+--------------------
+- same as in string
+- 'in' and 'not in' returns either True or False if element present in a list or not
+
+List iteration
+--------------
+- done using loops
+
+eg. fruits = ['Apple','Mango','Cherry','Banana']
+    for i in fruits:
+        print(i)
+
+    for i in fruits:
+        if i=="Mango":
+            print("Mango found")
+            break
+    else:
+        print("Mango not found")
+
+    
+    eurC = ['Ireland','Poland','Finland','France','Iceland','Spain']
+    for country in eurC:
+        if 'land' not in country:
+            print(country)
+
+
+Built-in functions:
+-------------------
+- len(list) - returns the length of the list
+- min(list) - returns the elements of the list with the minimum value
+- max(list) - returns the elements of the list with the maximum value
+
+eg. numbers = [23,56,78,13,98,33]
+    print(len(numbers))
+    print(min(numbers))
+    print(max(numbers))
+
+Built-in methods:
+----------------
+-append(element): Adds the speciied element to the end of the list
+-insert(index,element): Inserts an element at the specified index
+-pop(): Removes and returns the last element from the list
+-remove(element): Removes specified element from the list
+-reverse(): Reverse the order of items in the list
+-index(element): Returns the index of the first matched item
+-count(element): Returns count of how many times an element occurs in the list
+
+eg. names = ['James','Sam','Nick']
+    print(names)
+    names.append("Barry")
+    print(names)
+    print(names.index('Sam'))
+    names.insert(1,"Ron")
+    print(names)
+    names.remove('Nick')
+    print(names)
+
+    age = [18,67,45,18,35,23,18,22]
+    print(age.count(18))
+
+List comprehension:
+-------------------
+- an elegant way to define and create a list in python
+eg. #general program
+    even = []
+    for x in range(1,11):
+        if x%2 == 0:
+            even.append(x)
+
+    print(even)
+
+    #using list comprehension
+    even1 = [x for x in range(1,11) if x%2==0]
+    print(even1)
