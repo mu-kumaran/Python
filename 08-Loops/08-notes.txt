@@ -1,0 +1,68 @@
+Looping
+-------
+- Loops = repetition
+- A loop statement allows us to execute a statement or group of statements multiple times
+
+Definite iteration:
+------------------
+- number of repetitions is specified explicitly in advance
+eg. for loop
+
+Indefinite iteration:
+---------------------
+- code block executes until some condition is met
+eg. while loop
+
+range():
+-------
+syntax:
+------
+range(start,stop,step)
+
+print(list(range(5)))
+print(list(range(1,5)))
+print(list(range(1,10,2)))
+print(list(range(70,100,5)))
+
+for loop
+--------
+syntax:
+-------
+for val in sequence:
+    #statements
+
+eg. for i in range(5):
+        print(i)
+
+    for i in range(5):
+        print("PythonX")
+
+    for i in "PythonX":
+        print(i)
+
+while loop:
+-----------
+while boolean_expression:
+    #statements
+
+eg. i=0
+    while(i<3):
+        print("I love python")
+        i = i+1
+
+break statement:
+----------------
+- used to teminate the loop or statement in which its is present
+- control then passes to the statements that are present after the loop block ends
+- If the break statement is present in the nested loop, then it terminates only those Loops
+  which contain a break statement
+
+eg. To print only 'Good' in the word 'Goodmorning'
+
+    str = "Goodmorning"
+    print(str)
+    for i in str:
+        if(i=='m'):
+            break
+        else:
+            print(i)

@@ -122,4 +122,33 @@ eg. str = "python"
 String methods:
 ---------------
 - various methods to manipulate strings
-    1. 
+    1. capitalize(x) - converts the first character to uppercase and all other characters to lowercase
+    2. count(x) - Returns the no of times the specified value occurs in a string
+    3. find(x) - searches the string for a specified value and returns the position where it was found. If it is not found it will
+                 return -1
+    4. index(x) - searches the string for a specified value and returns the index of position where it was found. If it is not found
+                  it will throw an Exception (error)
+    5. isalnum() - Returns True if all characters in the string are alphanumeric
+    6. isalpha() - Returns True if all characters in the string are alphabet
+    7. islower() - Returns True if all characters in the string are lower case
+    8. isupper() - Returns True if all characters in the string are upper case
+    9. join() - Joins the element of an iterable to the end of the string
+    10. lower() - converts the string into lowercase
+    11. upper() - converts the string into uppercase
+    12. replace(a,b) - Returns the string where a specified value is replaced with specified value
+    13. strip() - Returns a trimmed version of the string, that is it removes the whitespaces from both the ends
+
+    Note: All string methods return the new values. They do not change the original string. 
+          Because string is immutable in python   
+
+    eg. str = "Python"
+        print(str.islower())
+        print(str.upper())
+        print(str.lower())
+        print(str.capitalize())
+        print(str.replace('P','A'))
+
+len() method:
+-------------
+- accepts the string as a parameter and returns the length of the string. It also counts all the whitespaces in the 
+  string

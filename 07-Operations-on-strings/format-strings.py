@@ -46,6 +46,11 @@ print(appName[-6])
 print(appName[-7])
 
 # String slicing - getting substring
+
+# string_name[start:end:step]
+# start index - included
+# end index - excluded
+
 print("String slicing:")
 appName = 'PythonX'
 print(appName[:])
@@ -61,10 +66,25 @@ print(appName[::2])
 firstname = "John"
 lastname = "Doe"
 fullname = firstname +" "+ lastname
+message ="Welcome to Jumanji"
 print(fullname) 
-print("".join([firstname,lastname]))
+print(" ".join([firstname,lastname]))
+
+print(";".join([message,"Again"]))
 
 #Repetition
 str = "python"
 print(str*2)
+
+#string methods
+str = "Python"
+print(str.islower())
+print(str.upper())
+print(str.lower())
+print(str.capitalize())
+print(str.replace('P','A'))
+
+# len() method
+str = "Love Python"
+print(len(str))
 
