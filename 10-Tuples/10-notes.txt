@@ -1,0 +1,85 @@
+Tuples:
+------
+- Read-only lists, immutable
+
+syntax:
+-------
+var_name = ()
+
+eg. tup1 = (1,2,3,"manoj",98.3,45.6,True)
+    tup2 = (15,34,65,78)
+    tup3 = ()
+
+    employees_birth_years = (1989,1991,1995,1998,1976)
+    print(employees_birth_years)
+
+Manipulating Tuples:
+-------------------
+eg. languages = ('python','ruby','java','php')
+    print(languages)
+
+    # accessing elements
+    print(languages[0])
+    print(languages[2])
+
+    # slicing tuples
+    print(languages[1:4])
+
+    # updating tuples
+    # since tuples are immutable, it cannot be updated
+    # languages[3] = 'lisp' throws an error
+
+    # deleting tuples
+    # since tuples are immutable, removing elements from the tuple is not allowed
+    # but entire tuple can be deleted using del statement
+    del languages
+
+Operations on tuples
+--------------------
+- since tuples are immutable, result of operations on a tuple are always a new tuple
+- operations are concatenation, repetition, and membership
+
+eg. #concatenation and repetition
+    tup1 = (1,2,3)
+    tup2 = (4,5,6)
+    print(tup1+tup2)
+    print(tup1*3)
+
+    #membership
+    names = ('sam','mike','kane','nick')
+    print('sam' in names)
+    print('samuel' in names)
+
+Iterations on tuples
+--------------------
+eg. cities = ("London","New york","Paris","Texas")
+    for x in cities:
+        print(x)
+
+Built-in functions:
+-------------------
+- some built in functions are len(), max(), min()
+
+eg . numbers = (23,56,78,13,98,33)
+    print(len(numbers))
+    print(min(numbers))
+    print(max(numbers))
+
+Built-in methods:
+----------------
+- Since tuples are immutable, methods like append(), insert(), remove(), pop() etc cannot be used
+- Only index(element), count(element) methods can be used
+
+eg. age = (18,67,45,18,35,23,18,22)
+    print(age.count(18))
+    print(age.index(45))
+
+Advantages of tuples:
+---------------------
+- Tuples generally used for heterogeneous data types and lists for homogeneous data types
+- Since tuples are immutable, iterating through a tuple is faster than a list. So there is a 
+  slight performance boost
+- Tuples that contain immutable elements can be used as a key for dictionary, with lists this is 
+  not possible
+- If you have data that doesn't change, implementing it as a tuple will guarantee that it remains 
+  write-protected.

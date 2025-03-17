@@ -1,0 +1,20 @@
+Dicitionary
+-----------
+- Unordered Key-Value pairs, mutable
+- Each key in Dicitionary is unique, while values can be repeated
+- One can retrieve values when key is known
+- keys must be of immutable datatypes such as strings,numbers,tuples
+- pretty useful concept in python 
+- even useful in concepts such as Data Science, Machine Learning and Web development   
+
+syntax:
+--------
+
+dict_name = {}
+
+eg. dict1 = {}
+
+    dict2 = {
+        1: "Sam",
+        2: "John"
+    }

@@ -86,6 +86,12 @@ Membership operator:
 - same as in string
 - 'in' and 'not in' returns either True or False if element present in a list or not
 
+eg. enrolledList = ['Sam','Mike','Kane','Nick']
+    print('Sam' in  enrolledList)
+    print('sam' in  enrolledList)
+    print('Samuel' in  enrolledList)
+    print('Samuel' not in  enrolledList)
+
 List iteration
 --------------
 - done using loops
