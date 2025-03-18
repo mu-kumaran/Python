@@ -63,3 +63,13 @@ nested if-elif-else statement:
 ------------------------------
 - It contains if-else within another if-else statements 
 - Any number of statements can be nested inside one another
+
+eg. username = input("Enter your username: ")
+    if (username=="manoj"):
+        password = input("Enter your password: ")
+        if (password=="12345"):
+            print("Login successful")
+        else:
+            print("Incorrect password")
+    else:
+        print("User not found")
