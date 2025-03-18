@@ -68,3 +68,52 @@ eg. A = {1,2,3,4,5}
     print("B-A = ",B-A)
     print("A-B = ",A.difference(B))
     print("B-A = ",B.difference(A))
+
+Built-in functions
+------------------
+- len(), min(), max() are already known
+- sorted(): returns a new sorted list form elements in th set. It does not sort the set itself
+- sum(): returns the usm of all elements in the set
+
+eg. age = {23,22,34,36,24,41}
+
+    print(len(age))
+    print(min(age))
+    print(max(age))
+    print(sorted(age))
+    print(sum(age))
+
+Built-in methods
+----------------
+
+-add(): adds an element to the set
+-intersection(): returns the intersection of two sets as the new set
+-clear(): removes all elements form the set
+-copy(): returns a copy of the Set
+-difference(): returns the difference of two or more sets as a new set
+-discard(): removes the element from the set if it is a member
+-isdisjoint(): returns True if two sets have a null intersection
+-issubset(): returns True if another set contains this set
+-issuperset(): returns True if this set contains another set
+-pop(): removes and returns an arbitrary set element
+-remove(): removes an element from the set
+-union(): returns the union of the set in a new Set
+-update(): updates the union of itself and 
+
+eg. age = {23,22,34,36,24,41}
+    age.add(56)
+    print(age)
+    age.remove(22)
+    print(age)
+    age.pop()
+    print(age)
+    age.clear()
+    print(age)
+
+    A = {1,2,3}
+    B = {1,2,3,4,5}
+    c = {100,101,102}
+    print(A.issubset(B))
+    print(B.issuperset(A))
+    print(A.isdisjoint(B))
+    print(A.isdisjoint(C))

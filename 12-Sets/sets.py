@@ -34,3 +34,36 @@ print("A-B = ",A-B)
 print("B-A = ",B-A)
 print("A-B = ",A.difference(B))
 print("B-A = ",B.difference(A))
+
+# Built-in functions
+age = {23,22,34,36,24,41}
+
+print(len(age))
+print(min(age))
+print(max(age))
+print(sorted(age))
+print(sum(age))
+
+# Built-in methods
+age.add(56)
+print(age)
+age.remove(22)
+print(age)
+age.pop()
+print(age)
+age.clear()
+print(age)
+
+A = {1,2,3}
+B = {1,2,3,4,5}
+C = {100,101,102}
+print(A.issubset(B))
+print(B.issuperset(A))
+print(A.isdisjoint(B))
+print(A.isdisjoint(C))
+
+bricsNations = {'B','R','I','C','S'}
+bricsNations.discard('Z')
+print(bricsNations)
+# bricsNations.remove('Z') --> throws an error
+
