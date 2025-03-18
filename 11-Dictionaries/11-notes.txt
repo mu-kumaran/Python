@@ -18,3 +18,115 @@ eg. dict1 = {}
         1: "Sam",
         2: "John"
     }
+
+    studentsEnrolled= {
+    "John": "Python",
+    "Sam": "Java",
+    "Nick": ["Python","Javascript"]
+    }
+
+    print(studentsEnrolled)
+
+Manipulating dictionary elements:
+--------------------------------
+1. Accessing elements
+2. Updating elements
+3. Deleting elements
+
+Accessing elements:
+-------------------
+- uses keys to access elements, since indexing is not possible in dictionaries
+- Keys can be accessed using [] or get() method
+
+eg. example = {
+    1:"John",
+    2:"Nick"
+    }
+
+    print(example[1])
+    print(example.get(2))
+
+Updating elements:
+------------------
+- we can either upadate the value or add a new key-value pair ot the collection
+
+eg. names = {
+    1:"Sam",
+    2:"Helen"
+    }
+    print(names)
+    names[1] = "mano"
+    names[2] = "sudhan"
+    names[3] = "dinesh"
+    print(names)
+
+Deleting elements:
+------------------
+- we can use the del keyword to delete an particular item or the whole dictionary
+
+eg. names = {
+    1:"Sam",
+    2:"Helen",
+    3:"dinesh"
+    }
+    del names[3]
+    print(names)
+
+Dictionary functions:
+---------------------
+keys() - returns list of dictionary keys
+values() - returns list of dictionary values
+clear() - removes all elements of a dictionary
+get(key) - returns the value of the specified key, returns none if key does not exist
+items() - returns a list of dictionaries key-value pairs in tuple form
+update(dict) - adds specified dictionary(items) key-value pairs to the dictionary 
+
+eg. empData = {
+    101: "Bravo",
+    102: "Asten",
+    103: "Kerry"
+    }
+
+    print(empData.keys())
+    print(empData.values())
+    print(empData.items())
+    empData.update({104:"Curan",105:"Elly"})
+    print(empData)
+    print(empData.get(104))
+
+Accessing and updating list inside dictionaries
+------------------------------------------------
+syntax:
+-------
+var[key].append(value)
+var[key].remove(value)
+
+eg. continent = {
+    "Asia":["India","UAE","China"]
+    }
+
+    continent["Asia"].append("Japan")
+    print(continent)
+    continent["Asia"].remove("China")
+    print(continent)
+
+Iterating over a dictionary
+---------------------------
+- iterating over dictionary is little bit tricky compared to iterating over lists and tuples because of 
+  key-value pairs in dictionaries
+
+eg. empData = {
+    101: "Bravo",
+    102: "Asten",
+    103: "Kerry"
+    }
+    for i in empData:
+        print(i)        # returns keys
+
+    for i in empData.values():
+        print(i)        # returns values
+
+    for i in empData.items():
+        print(i)        # returns both keys and values in tuple form
+        print(i[0])     # returns keys
+        print(i[1])     # returns values

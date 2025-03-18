@@ -1,0 +1,70 @@
+Sets
+----
+- Unordered collection of distinct objects
+- datastructure in python used to group and store multiple elements 
+- Set elements are immutable, unique, duplicate elements are not allowed. so sets caanot have lists and dictionaries as
+  an element, since they are mutable.
+- Set as a whole can be modified, means mutable
+- valid set can have values of Numeric,String,Tuple,Boolean datatypes.
+- defined using the set() function or placing all elements within a pair of curly braces
+- but {} is an empty dictionary but not an set
+
+eg. data = set()
+    print(data)
+    print(type(data))
+
+    set1 = {1,2,3}
+    set2 = {6,8.9,"james"}
+    print(set1)
+    print(set2)
+
+Accessing elements in sets:
+---------------------------
+- since sets are unordered individual elements cannot be accessed.
+- We can access elements One by One by looping through it
+
+eg. days = {"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"}
+    print(days)
+
+    for day in days:
+        print(day)
+
+
+Set operations
+--------------
+- Union of sets
+- Set intersection
+- Difference of sets
+
+Union of sets:
+--------------
+- Union of two sets A and B is the set of elements that are in A, in B, or in both A and B
+- Union operation on two sets produces a new set containing all the distinct elements from both the sets
+- union operation is performed using '|' operator or union() method
+
+eg. A = {1,2,3,4,5}
+    B = {4,5,6,7,8}
+    print(A|B)
+    print(A.union(B))
+
+Intersection of sets:
+---------------------
+- set of elements that are common in both the sets
+- intersection operation can be performed using '&' operator or intersection() method
+
+eg. A = {1,2,3,4,5}
+    B = {4,5,6,7,8}
+    print(A&B)
+    print(A.intersection(B))
+
+Set Difference
+--------------
+- new set containing only the elements from the first set and none from the second set
+- performed using '-' operator or difference() method
+
+eg. A = {1,2,3,4,5}
+    B = {4,5,6,7,8}
+    print("A-B = ",A-B)
+    print("B-A = ",B-A)
+    print("A-B = ",A.difference(B))
+    print("B-A = ",B.difference(A))
