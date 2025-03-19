@@ -69,6 +69,7 @@ randrange(x,y,step) - returns a random number between given range with step size
 randint(x,y) - returns a random number between given range
 choice(sequence) - returns the random element from the given sequence
 shuffle(sequence) - takes the sequence and returns the sequence in a random order
+                    This method changes the original list, it does not return a new list.
 random() - Returns the random float number between 0 and 1 
 
 eg. import random

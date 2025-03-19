@@ -20,8 +20,8 @@ eg. a=35
     print("Multiplication is ",a*b)
     print("a/b = ",a/b)
     print("a modulus b = ",a%b)
-    print("Floor division is ",a//b)
-    print("Exponential is ",a**b)
+    print("Floor division is ",a//b)    # returns a quotient
+    print("Exponential is ",a**b)       # returns a remainder
 
 Comparison Operator:
 --------------------
@@ -72,7 +72,7 @@ Identity Operator:
 - used for checking if two values are located in the same part of the memory
 - id() returns the memory address
 - is --> returns True if the operands are identical (refers to the same object)
-- not is -->  returns True if the operands are not identical (do not refer to the same object)
+- is not-->  returns True if the operands are not identical (do not refer to the same object)
 
 eg. num1 = 5
     num2 = 5

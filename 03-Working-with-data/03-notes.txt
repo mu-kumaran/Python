@@ -13,7 +13,7 @@ A variable names
 - must start with a letter or underscore character
     eg. name, _country, _num, num_1 etc.
 - cannot start with number
-- can only contain alpha-numeric characters and underscores (A-Z,a-z,0-9 and _ )
+- can contain only alpha-numeric characters and underscores (A-Z,a-z,0-9 and _ )
 - are case-sensitive
     eg. Country, country, Name, name, _num, _Num are different Variables
 - A Value, if it is a word or character must be enclosed in single or double quotes
@@ -43,7 +43,7 @@ Numeric Type
 
 string Type
 ------------
-- A Sequence of characters which is internally stored and manipulated a combination of 0's and 1's in computer
+- A Sequence of characters which is internally stored and manipulated by a combination of 0's and 1's in computer
 - Encoding - conversion of character to number and reverse is Decoding
 - ASCII and Unicode are some popular encodings used
 - In Python string is a Sequence of Unicode characters

@@ -51,7 +51,7 @@ print(id(num1))
 print(id(num2))
 print(id(num3))
 print(num1 is num2)
-print(num1 is num3)
+print(num1 is not num3)
 
 # Walrus operator
 name = 'manoj'
