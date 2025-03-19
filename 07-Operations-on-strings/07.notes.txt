@@ -152,3 +152,6 @@ len() method:
 -------------
 - accepts the string as a parameter and returns the length of the string. It also counts all the whitespaces in the 
   string
+
+eg. str = "Love Python"
+    print(len(str))
