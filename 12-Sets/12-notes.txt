@@ -2,7 +2,7 @@ Sets
 ----
 - Unordered collection of distinct objects
 - datastructure in python used to group and store multiple elements 
-- Set elements are immutable, unique, duplicate elements are not allowed. so sets caanot have lists and dictionaries as
+- Set elements are immutable, unique, duplicate elements are not allowed. so sets cannot have lists and dictionaries as
   an element, since they are mutable.
 - Set as a whole can be modified, means mutable
 - valid set can have values of Numeric,String,Tuple,Boolean datatypes.
@@ -73,7 +73,7 @@ Built-in functions
 ------------------
 - len(), min(), max() are already known
 - sorted(): returns a new sorted list form elements in th set. It does not sort the set itself
-- sum(): returns the usm of all elements in the set
+- sum(): returns the sum of all elements in the set
 
 eg. age = {23,22,34,36,24,41}
 
@@ -98,7 +98,7 @@ Built-in methods
 -pop(): removes and returns an arbitrary set element
 -remove(): removes an element from the set
 -union(): returns the union of the set in a new Set
--update(): updates the union of itself and 
+-update(): updates the union of itself and others
 
 eg. age = {23,22,34,36,24,41}
     age.add(56)

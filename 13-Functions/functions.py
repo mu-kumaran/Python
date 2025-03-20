@@ -22,7 +22,10 @@ paymentStatus("accepted")
 
 # lambda functions
 
+import math
 add = lambda num1,num2: num1+num2
 squared = lambda n: n*n
+sqrt = lambda n: math.sqrt(n)
 print(add(80,20))
 print(squared(9))
+print(sqrt(4))

@@ -62,8 +62,8 @@ print(math.e)
 print("Positive infinity-",math.inf)
 print("Negative infinity-",-math.inf)
 
-Random :
------------------
+Random module:
+--------------
 seed(x) - Initialize the random number generator
 randrange(x,y,step) - returns a random number between given range with step size
 randint(x,y) - returns a random number between given range

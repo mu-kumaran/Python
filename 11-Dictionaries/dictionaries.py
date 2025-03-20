@@ -56,23 +56,6 @@ empData.update({104:"Curan",105:"Elly"})
 print(empData)
 print(empData.get(104))
 
-continent = {
-    "Asia":["India","UAE","China"]
-}
-
-continent["Asia"].append("Japan")
-print(continent)
-continent["Asia"].remove("China")
-print(continent)
-
-pizza = {
-    "Toppings":['Onions','Mushrooms','Cucumber']
-}
-pizza.get("Toppings").remove('Cucumber')
-print(pizza)
-pizza.get("Toppings").append('Pepperoni')
-print(pizza)
-
 # Iterating over dictionaries
 empData = {
     101: "Bravo",
@@ -90,3 +73,53 @@ for i in empData.items():
     print(i[0])     # returns keys
     print(i[1])     # returns values
 
+# Accessing and updating list inside dictionaries
+
+continent = {
+    "Asia":["India","UAE","China"]
+}
+
+continent["Asia"].append("Japan")
+print(continent)
+continent["Asia"].remove("China")
+print(continent)
+
+pizza = {
+    "Toppings":['Onions','Mushrooms','Cucumber']
+}
+pizza.get("Toppings").remove('Cucumber')
+print(pizza)
+pizza.get("Toppings").append('Pepperoni')
+print(pizza)
+
+studEnroll = {
+    'john':['java','python'],
+    'mano':['c++','web tech'],
+    'ganesh':['ruby','MySQL']
+}
+
+print(studEnroll)
+studEnroll['mano'].remove('web tech')
+print(studEnroll)
+studEnroll['mano'].append('mern stack')
+print(studEnroll)
+
+print(studEnroll['john'][0])
+studEnroll['john'][1] = 'dotnet'
+print(studEnroll['john'])
+
+# Accessing and updating nested dictionaries
+
+stud_profile = {
+    1001 : {
+        'name':'manoj',
+        'std':'10th',
+        'marks':989
+    }
+}
+
+print(stud_profile)
+print(stud_profile[1001])
+print(stud_profile[1001]['name'])
+stud_profile[1001]['name'] = 'sudhan'
+print(stud_profile[1001])

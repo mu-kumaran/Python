@@ -44,7 +44,7 @@ eg. def sayHello(name="user"):
 Lambda Functions:
 -----------------
 - shortcut to write and define functions in python
-- do not have any name for it - useually called anonymous functions
+- do not have any name for it - usually called anonymous functions
 - very useful when we work with concepts such as Django, Machine Learning and Data Science
 - defined using lambda keyword 
 - Though syntactically different, behaves in a same way as normal functions behave

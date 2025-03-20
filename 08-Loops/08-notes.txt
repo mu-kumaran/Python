@@ -69,7 +69,7 @@ eg. To print only 'Good' in the word 'Goodmorning'
 
 for-else statement:
 -------------------
-- if the else statement is used with for loop, then the else statement is sexecuted when the loop has
+- if the else statement is used with for loop, then the else statement is executed when the loop has
   exhausted iterating the list
 
 eg. str = "Goodmorning"
