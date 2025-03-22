@@ -1,0 +1,22 @@
+Supermarket cashier
+-------------------
+Datas:
+------
+1. product code
+2. product name
+3. quantity
+4. membership discount
+
+Mermbership type:
+-----------------
+1. Gold - 20% off
+2. Silver - 10% off
+3. Bronze - 5% off
+
+Steps:
+-----
+1. Entering products
+2. Calculating price
+3. Calculating discount 
+(with condition discount will be given only if billing amount exceeds $25 )
+4. Making bill
