@@ -1,5 +1,5 @@
-Supermarket cashier
--------------------
+Mini Supermarket cashier application
+------------------------------------
 Datas:
 ------
 1. product code
@@ -7,8 +7,8 @@ Datas:
 3. quantity
 4. membership discount
 
-Mermbership type:
------------------
+Mermbership type and its discount:
+---------------------------------
 1. Gold - 20% off
 2. Silver - 10% off
 3. Bronze - 5% off
