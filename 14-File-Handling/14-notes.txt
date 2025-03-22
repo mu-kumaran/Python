@@ -1,0 +1,11 @@
+File Handling
+-------------
+- There are instances wherer we need to store and retrieve data from files
+- Files are named locations on disk to store  related information. 
+- Files are used to permanently store data in a non-volatile memory such as hard disks and more, whereas variables and other structures store data in Random Access Memory(RAM), Which is volatile and loses its data when the computer is turned off.
+- Files can be of any type such as .txt files, .csv files and more
+- To work with a file in python we need 3 steps
+    1. Opening the file
+    2. Performing action (Reading or Writing)
+    3. Closing a file
+    Note: It is neccessary to close the file in the end so that the resources that are tied with the file are freed
