@@ -41,13 +41,13 @@ def getDiscount(billAmount,membership):
         if(membership == 'Gold'):
             billAmount = billAmount * 0.80
             discount = 20
-        elif(membership== 'silver'):
+        elif(membership == 'Silver'):
             billAmount = billAmount * 0.90
             discount = 10
         elif(membership == 'Bronze'):
             billAmount = billAmount * 0.95
             discount = 5
-        print(str(discount)+'% off for'+membership+''+'membership on total amount:$'+str(billAmount))
+        print(str(discount)+'% off for '+membership+' '+'membership on total amount:$'+str(billAmount))
     else:
         print('No discount on amount less than $25')
     return billAmount
