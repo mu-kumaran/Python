@@ -14,7 +14,7 @@ Mermbership type and its discount:
 3. Bronze - 5% off
 
 Steps:
------
+------
 1. Entering products
 2. Calculating price
 3. Calculating discount 
