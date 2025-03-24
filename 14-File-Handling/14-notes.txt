@@ -9,3 +9,117 @@ File Handling
     2. Performing action (Reading or Writing)
     3. Closing a file
     Note: It is neccessary to close the file in the end so that the resources that are tied with the file are freed
+
+File opening:
+-------------
+open() function
+---------------
+syntax: file_object = (file_name,access_mode)
+------
+file_object = variable name
+file_name = name of the file with file extension. Instead of file name we can also add absolute path of the file on our local machine
+access_mode = defines the mode in which file has been opened
+
+file access modes:
+-----------------
+1. Read mode
+2. Write mode
+3. Append mode
+
+Read mode:
+----------
+1. r - opens a file in read-only mode. It's a default mode. The file pointer is placed at the beginning of the file.
+2. rb - opens a file for reading only in binary format. The file pointer is placed at the beginning of the file.
+3. r+ - opens a file for both reading and writing. The file pointer is placed at the beginning of the file.
+4. rb+ - opens a file for both reading and writing in binary formnat. The file pointer is placed at the beginning of the file.
+
+Write mode:
+-----------
+1. w - opens a file in write-only mode. It will overwrite the file if the file exists. If the file does not exist, it will create a new file for writing
+2. wb - opens a file for writing only in binary format. It will overwrite the file if the file exists. If the file does not exist, it will create a new file for writing
+3. w+ - opens a file for both reading and writing. It will overwrite the file if the file exists. If the file does not exist, it will create a new file for reading and writing
+4. wb+ - opens a file for both reading and writing in binary format. It will overwrite the file if the file exists. If the file does not exist, it will create a new file for reading and writing 
+
+Append mode:
+------------
+- To avoid overwriting the existing file, we use append mode. Append means add at the end.
+1. a - opens a file for appending. The file pointer is at the end of the file if the file exists. If the file does not exist, it creates a new file for writing.
+2. ab - opens a file for appending in binary format. The file pointer is at the end of the file if the file exists. If the file does not exist, it creates a new file for writing.
+3. a+ - opens a file for both appending and reading. The file pointer is at the end of the file if the file exists. If the file does not exist, it creates a new file for writing.
+4. ab+ - opens a file for appending and reading in binary format. The file pointer is at the end of the file if the file exists. If the file does not exist, it creates a new file for writing.
+
+Reading data from files
+-----------------------
+r - read-only
+r+  - read and write
+rb - read-only binary
+rb+ - read and write binary
+
+syntax: file_object.read()
+-------
+read() - reads a string from an open file. It reads the content until it reaches the end of the file.
+read(size) - accepts a parameter as the size. The passed parameter is the number of bytes to be read from the opened file. This method starts reading from the beginning of the file until the number of bytes specified.
+readline() - reads one single line of the file at a time
+readlines() - reads all the lines until it reaches the end of the file  
+
+eg. fp = open("D:/Software/Livewire_notes/Python/14-File-Handling/python.txt",'r')
+    # fp = open("python.txt",'r')
+    # print(fp.read())
+    # print(fp.read(6))
+    # print(fp.readline())
+    print(fp.readlines())
+
+Writing to a file
+-----------------
+w - write only
+w+ - write and read
+wb - write only binary
+wb+ - write and read binary
+
+write() - writes any string in the opened file
+note: python strings can have binary data not just text
+
+syntax: file_object.write()
+-------
+eg. fp = open("D:/Software/Livewire_notes/Python/14-File-Handling/python.txt",'w')
+    # fp = open("python.txt",'w')
+    fp.write("PythonX is the Best") # It will overwrite the previous content 
+
+Appending  the file
+-------------------
+a - append only
+a+ - append and read
+ab - append only binary
+ab+ - append and read binary
+
+eg. fp = open("D:/Software/Livewire_notes/Python/14-File-Handling/python.txt",'a')
+    # fp = open("python.txt",'w')
+    fp.write("Python has become one among the top languages in the world") # It will get added to the previous content 
+
+File Closing
+------------
+- Whenever we open the file, the suystem resources are allocated that store the file information, file object and more.
+- Thus, when we are done with the file handling, it is recommended to close the file and free up those resources
+- Python automatically closes a file when the reference object of a file is reassigned to another file or not in use. But, it is a good practice to manually close a file.
+
+close() - flushes any unwritten information and closes the file object
+
+syntax: file_object.close()
+-------
+
+eg. fp = open("D:/Software/Livewire_notes/Python/14-File-Handling/python.txt",'r')
+    # fp = open("python.txt",'r')
+    print(fp.read())
+    fp.close()
+
+File pointer
+------------
+- basically the cursor that represents the position where it is in the file.
+- while working with the files, the file pointer is at the beginning whe we start reading or writing to a file
+- while appending, the file pointer is at the end of the file
+
+Manipulating pointer
+--------------------
+tell() - tells you the current position of the pointer within the file
+
+seek(position,from) - The seek() method changes the current file position. The position argument indicates the number of bytes to be moved.    The 'from' argument (which is not mandatory to be mentioned) specifies the reference position from where the bytes are to be moved. 
