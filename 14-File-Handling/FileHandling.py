@@ -37,3 +37,4 @@ fp.seek(5)
 print("Pointer position after seeking:",fp.tell())
 print(fp.read())
 fp.close()
+

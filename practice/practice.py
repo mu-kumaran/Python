@@ -1,0 +1,8 @@
+file = open("practice.txt",'r+')
+print("Pointer position",file.tell())
+# file.write("\nPython has become one among the top languages of the world.")
+file.seek(35)
+print("Pointer position",file.tell())
+print(file.readline(10))
+print("Pointer Position:",file.tell())
+file.close()

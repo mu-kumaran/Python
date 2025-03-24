@@ -14,7 +14,7 @@ File opening:
 -------------
 open() function
 ---------------
-syntax: file_object = (file_name,access_mode)
+syntax: file_object = open(file_name,access_mode)
 ------
 file_object = variable name
 file_name = name of the file with file extension. Instead of file name we can also add absolute path of the file on our local machine
@@ -123,3 +123,28 @@ Manipulating pointer
 tell() - tells you the current position of the pointer within the file
 
 seek(position,from) - The seek() method changes the current file position. The position argument indicates the number of bytes to be moved.    The 'from' argument (which is not mandatory to be mentioned) specifies the reference position from where the bytes are to be moved. 
+
+eg. # tell() method
+    fp = open("D:/Software/Livewire_notes/Python/14-File-Handling/data.txt",'r')
+    # fp = open("data.txt",'r')
+    print("Pointer position before reading:",fp.tell())
+    fp.read()
+    print("Pointer position after reading:",fp.tell())
+
+    # seek() method
+    fp = open("D:/Software/Livewire_notes/Python/14-File-Handling/data.txt",'r')
+    # fp = open("data.txt",'r')
+    print("Pointer position before seeking:",fp.tell())
+    fp.seek(5)
+    print("Pointer position after seeking:",fp.tell())
+    print(fp.read())
+    fp.close()
+
+eg. file = open("practice.txt",'r+')
+    print("Pointer position",file.tell())
+    # file.write("\nPython has become one among the top languages of the world.")
+    file.seek(35)
+    print("Pointer position",file.tell())
+    print(file.readline(10))
+    print("Pointer Position:",file.tell())
+    file.close()
