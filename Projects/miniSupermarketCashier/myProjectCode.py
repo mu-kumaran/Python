@@ -1,19 +1,17 @@
-# Supermarket cashier
+# Mini Supermarket cashier application
 # Membership discount will be given if billamount exceeds Rs.500
 
 # Functions
 def billAmount(product,prod_details):
     billAmount = 0
-    print("Bill details:")
-    print("------------")
     for key,value in product.items():
-        print(key.capitalize(),"= Rs.",prod_details[key]," X ",value," = ",(prod_details[key])*value)
         billAmount += (prod_details[key])*value
     return billAmount
 
 def billDiscount(bill,mem_discount):
     discount = 0
     if bill>500:
+        print('Congrats, You have purchased for Rs.',bill)
         print("You are selected for membership discount")
         mem_access = input("Membership available?(y/n):")
         if('n' in  mem_access or 'no' in mem_access):
@@ -23,6 +21,10 @@ def billDiscount(bill,mem_discount):
             for key,value in mem_discount.items():
                 if membership == key:
                     discount = value*0.01*bill
+                    print("")
+                    print(str(value)+"% discount for",membership.capitalize(),"membership")
+                    return discount
+            else: 
                 return discount
     else:
         return discount
@@ -62,18 +64,44 @@ mem_discount={
 product = {}
 option = True
 while(option):
-    prod_input = (input("Add product:")).lower()
-    qty_input = int(input("Add quantity:"))
+    input_item = True
+    while(input_item):
+        prod_input = (input("Add product:")).lower()
+        for i in prod_details:
+            if i == prod_input:
+                input_item = False
+                break
+        else:
+            print("Select the right product")
+    
+    while(True):
+        try:
+            qty_input = int(input("Add quantity:"))
+        except Exception:
+            print("Its not a number")
+        else:
+            break
     product.update({prod_input:qty_input})
     contd = (input("continue? (y/n):")).lower()
     if (('n' in contd) or ('no' in contd)):
         option = False
-print(product)
+
 
 # Calculating total
 bill = billAmount(product,prod_details)
-print("Bill amount:",bill)
 
 # Adding discount
 discount = billDiscount(bill,mem_discount)
 print("Discount: Rs.",discount)
+print("")
+
+# Making final bill
+final_bill = bill-discount
+print("Bill details:")
+print("------------")
+for key,value in product.items():
+        print(key.capitalize(),"= Rs.",prod_details[key]," X ",value," = ",(prod_details[key])*value)
+print("Total Bill amount:Rs.",bill)
+print("Less: discount Rs.",discount)
+print("Net Bill amount = Rs.",final_bill)
+print("Thanks for shopping!")

@@ -70,3 +70,11 @@ print("")
 print("mano" in name)
 print("890" not in name)
 print("KUM" in name1)
+
+inp = 'manoj'
+
+if(isinstance(inp,str)):
+    print("Its a string")
+
+if(isinstance(inp,int)):
+    print("Its an integer")
