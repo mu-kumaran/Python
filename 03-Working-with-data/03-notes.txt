@@ -21,6 +21,10 @@ A variable names
 mobile_brand = "samsung"
 print(mobile_brand)
 
+camel case: myVarName = "manoj" 
+pascal case: myVarName = "manoj"
+snake case: my_var_name = "manoj"
+
 Data Types
 -----------
 
@@ -80,8 +84,34 @@ input()
 
 type conversion method
 -------------------------
-- int(), float(), bool(), complex() are type conversion methods
+- int(), float(), bool(), complex(),str() are type conversion methods
 
     eg. age = int(input("Enter your age: "))
         print(age)
         print(type(age))
+
+        x = str(3)
+        y = int(3)
+        z = float(3)
+        d = complex(3)
+
+Assigning values multiple
+-------------------------
+x,y,z = "Orange","Banana","Cherry"
+x=y=z = "orange"
+fruits = ["apple","banana","cherry"]
+x,y,z = fruits
+
+global scope and local scope Variables
+--------------------------------------
+local scope - Variables defining inside the function
+global scope - variables defining outside the function and defined with 'global' keyword
+
+eg. x = 5   --> global scope variable 'x'
+    def func():
+        y = 5   --> local scope variable 'y'
+        global z = 6    --> global scope variable 'z'
+    print(x)
+    print(y)    --> throws error of 'undefined' bcoz of local scope  
+    func()      --> function should be executed for defining global variable
+    print(z) 

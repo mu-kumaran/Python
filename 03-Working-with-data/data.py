@@ -24,10 +24,10 @@ print(result)
 
 #multi-line string
 
-quote = """ Lore ipsum  adsfkj asfasdfjkndf adsdsv asdloijlkmae aer vpkj v aesfjkzxcv aesfASDFJNV ASDFJNMADFLKXCasdfgxcv 
+quote = ''' Lore ipsum  adsfkj asfasdfjkndf adsdsv asdloijlkmae aer vpkj v aesfjkzxcv aesfASDFJNV ASDFJNMADFLKXCasdfgxcv 
 asdfklm asdfkmnd  APOEKJCDVM  asefmsdf asdfj PEOFMASDF pomja EPOK A;EMASDFGLK DFSA;PSVC[Pl P;[ASJDF ASDLKMVNMLASEF ASDLK]]
 ASDLKMN ;lj;lkm., b;p;olmkas, ;[a;lmdf ;as;dllmads;lm mgp;okja;lmds ;ljmasd;f dscv;lmj., ;lmasd;lm,ac;.,mvjasdf;lmdsf;lmd]
-"""
+'''
 
 print(quote)
 
@@ -55,4 +55,28 @@ temp = float(input("enter the temperature: "))
 print("Your age is ", ur_age)
 print(type(ur_age)) #accept input as integer
 print(type(temp)) #accept input as float
+
+
+#Assigning multiple values
+x,y,z = "orange","banana","apple"
+print(x,y,z)
+
+x=y=z = "Cherry"
+print(x,y,z)
+
+fruits = ["orange","banana","guava"]
+x,y,z = fruits
+print(x,y,z)
+
+# Global scope and local scope
+x=5 # x is a global scope
+def func():
+    local_y = 6  # y is a local scope
+    global z1 
+    z1 = "Hello" # here z is the global scope 
+func()
+print(x)
+# print(local_y) -->throws bcoz of local scope 
+print(z1)
+
 

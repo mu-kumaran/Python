@@ -1,0 +1,36 @@
+Exception Handling
+------------------
+Error in Programming:
+--------------------
+ - A mistake in the code
+ - Something that stops the execution of the program
+ - Unexpected behaviour
+
+- Errors are the mistakes or faults in the program that cause it to behave unexpectedly
+- Programming error is generally known as bugs and the process to remove bugs from the program is called debugging
+
+Types of errors:
+----------------
+1. Syntax errors
+2. Logic errors
+3. Runtime errors
+
+Syntax error:
+------------
+- Its an error in the source code
+- any aspects of the code that do not conform to the syntax of that particular programming language will produce a syntax error. Eg. missing the paranthesis, double quotes etc
+- these errors are generally caught by the compiler at the compiler time. And thus are also called compilation errors.
+
+Logic errors:
+-------------
+- Its an error in the programming Logic
+- It will cause your program to perfor, undesired operations that you didn't intend your program to perform
+- It occurs generally due to improper logic used in the program, which is not caught by the compiler due to improper logic. It is difficult to debug.
+- eg. using / operator instead of % operator for finding the remainder between two numbers  
+
+Runtime errors:
+--------------
+- errors caught at the run time
+- these errors do not have any syntax problem or logic problem.
+- These errors are generated when the program is running and leads to abnoraml behaviour or termination of the program
+- The general cause of Run time erros is because program is trying to perform an operation that is impossible to carry out. Eg. dividing a number by zero  
