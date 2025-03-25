@@ -34,3 +34,45 @@ Runtime errors:
 - these errors do not have any syntax problem or logic problem.
 - These errors are generated when the program is running and leads to abnoraml behaviour or termination of the program
 - The general cause of Run time erros is because program is trying to perform an operation that is impossible to carry out. Eg. dividing a number by zero  
+
+Exception handling:
+-------------------
+- Runtime errors are called Exceptions 
+- happens at the time of execution of the program 
+- concept of handling run-time errors are called exception handling
+
+Common examples of exceptions:
+------------------------------
+- Division by zero
+- Accessing a file that does not exist
+- Addition of two incompatible types
+- Trying to access a nonexistent index of a sequence
+- Removing the table from the disconnected database server
+
+Benefits of Exception-handling:
+-------------------------------
+- allows you to separate error handling code from the normal code
+- An exception is the python object which represents an error
+- Allows you to stimulate consequences as the error-handling takes place in one place and in one manner
+- An exception is a convenient method for handling error messages
+
+Exception class:
+----------------
+- base class from which all the common built-in exceptions inherit
+
+Common exceptions:
+-----------------
+1. StandardError - It is the base class for all built-in exceptions except StopIteration and SystemsExit
+2. ArithmeticError - It is the base class for all errors that occur for numeric calculation.
+3. FloatingPointError - It is raised when a floating-point calculation fails.
+4. ZeroDivisionError - It is raised when a division or modulo by zero takes place for all numeric types.
+5. EOFError - It is raised when there is no input from the input() function and the end of the file is reached.
+6. ImportError - It is raised when an import statement fails.
+7. KeyboardInterrupt - It is raised when the user interrupts program execution, usually by pressing Ctrl + c.
+8. IndexError - It is raised when an index is not found in a sequence.
+9. NameError - It is raised when an identifier is not found in the local or global namespace.
+10. IOError - It is raised when an input/output operation fails, such as the print statement or the open() function when trying to open a file that does not exist.
+11. SyntaxError - It is raised when there is an error in Python syntax.
+12. IndentationError - It is raised when indentation is not specified properly.
+13. TypeError - It is raised when an operation or function is attempted that is invalid for the specified data type.
+14. ValueError - It is raised when the built-in function for a data type has the valid type of arguments, but the arguments have invalid values specified.   
