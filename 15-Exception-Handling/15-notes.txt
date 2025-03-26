@@ -76,3 +76,103 @@ Common exceptions:
 12. IndentationError - It is raised when indentation is not specified properly.
 13. TypeError - It is raised when an operation or function is attempted that is invalid for the specified data type.
 14. ValueError - It is raised when the built-in function for a data type has the valid type of arguments, but the arguments have invalid values specified.   
+
+Exception handling statements:
+-----------------------------
+1. Try statement
+2. Except statement
+
+- The critical operation which can raise an exception is plced insied the try statement. As the name suggests, it will try to execute that particular piece of code
+- If the exception is raised, it will be passed to the except statement which handles the exception as elegantly as possible.
+- If the exceptions are not raised, the statements inside the try block are executed and the control is passed to the next statements.
+
+syntax:
+-------
+try:
+# statements that can raise the error
+except Exception1:
+# If there is Exception1, then this block will be executed
+except Exception2:
+ # If there is Exception2, then this block will be executed
+
+Key points:
+-----------
+- A single try block can have multiple except blocks. Thus, if the try block throws multiple exceptions, they can be handled respectively.
+- You can also provide a generic except caluse, which handles any exception. Here, we can use the Exception class as we have seen in the previous chapter.
+- Also, after the except clause, you can include an else-clause. The code in the else-block executes if the code in the try:block does not raise any exception.
+
+eg. try:
+        print(name)
+    except NameError:
+        print("Some error occurred. Please contact the developer")
+
+# To define and describe the error we use the following syntax 'as e' after exception type
+    try:
+        print(name)
+    except NameError as e:
+        print("Some error occurred. Please contact the developer:",e)
+
+Note: we can use 'e' or 'err' or any name we want to describe error
+
+eg. # NameError exception
+    name = "pythonx"
+    try:
+        print(name)
+    except NameError:
+        print("Some error occurred. Please contact the developer")
+
+    try:
+        print(name)
+    except NameError as err:
+        print("Some error occurred. Please contact the developer:",err)
+
+    # ZeroDivisionError exception
+
+    try:
+        num1 = int(input("Enter the number1:"))
+        num2 = int(input("Enter the number2:"))
+        print("Division is:",num1/num2)
+    except ZeroDivisionError as err:
+        print("Oops, You cannot divide the number by zero:",err)
+    except Exception as err:
+        print("Error:",err)
+
+
+    # IOError
+    try:
+        fp = open('data.txt','r')
+        fp.read()
+    except IOError as err:
+        print("File not found:",err)
+    except Exception as err:
+        print("Error:",err)
+
+finally statement:
+------------------
+- finally block is a place to put any code that must execute, irrespective of whether the try-block raised an exception or not
+- Thus, we can use the finally statement to execute a particular part of the code after the try-except is done
+- finally block is optional
+
+eg. try:
+    num1 = int(input("Enter the number1:"))
+    num2 = int(input("Enter the number2:"))
+    print("Division is:",num1/num2)
+    except ZeroDivisionError as err:
+        print("Oops, You cannot divide the number by zero:",err)
+    except Exception as err:
+        print("Error:",err)
+    finally:
+        print("Thank you for using our calculator")
+
+raise keyword:
+--------------
+- In python programming, exceptions are raised when errors occur at runtime.
+- We can also manually raise exceptions using the raise keyword.
+
+syntax:
+-------
+raise Exception("Message")
+
+Here,
+- Exception is the type of exception (for eg.NameError)
+- And the argument 'Message' is a value for the exception. The argument is optional.
