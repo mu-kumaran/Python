@@ -1,0 +1,8 @@
+Modules
+-------
+- Modules are used for reusability in code
+- Modules are just like a readymade bread. You can directly use it and make a sandwich.
+- Technically modules refer to a file containing Python statements and definitions. These are the pre-written codes that are written by someone else which you can use directly in your code
+- we use modules to break down large programs into small manageable and organized files.
+- We can define our most used functions in a module and import it, instead of copying their definitions into different programs
+eg. math module and random modules are used in the section 'operations on numbers'
