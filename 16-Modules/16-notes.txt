@@ -6,3 +6,147 @@ Modules
 - we use modules to break down large programs into small manageable and organized files.
 - We can define our most used functions in a module and import it, instead of copying their definitions into different programs
 eg. math module and random modules are used in the section 'operations on numbers'
+
+Types of Modules
+----------------
+1. Built-in modules
+2. Third-party modules
+3. Custom modules
+
+Built-in modules:
+-----------------
+- These modules are available in Python by default, which are developed and maintained by the python developer team
+- To use such modules, you can directly import them into your file and just make the call to methods you need.
+eg. math and random module
+
+Third-party modules
+-------------------
+- These modules are just like the built-in modules, but the major difference is that we need to install them first.
+- Once they are installed, you can use them just like the built-in modules.
+- Third party modules can be installed using the 'pip' command. PIP is the package manager for python packages.
+- These modules are uploaded and stored at the PyPI repository. The Python Package Index, abbreviated as PyPI is the official third-party software repository for python.
+
+syntax:
+-------
+pip install module_name   --> for windows
+pip3 install module_name  --> for  macOS/Linux
+
+Custom modules
+--------------
+- modules created by the developer, which are simple python files that can be imported into another python file/project.
+- Once imported, you can access all the attributes and methods of the imported file. Such files are called Python custom modules.
+- This allows you to reuse your code in the same project and also helps you to write efficient and fewer lines of code.
+
+How to use python modules?
+--------------------------
+- Using modules can boost up your productivity and help to increase the speed of the development process.
+- Following are the three ways to use python module
+
+1. The import statement
+2. Import statement and renaming
+3. The from...import statement
+
+The import statement:
+--------------------
+- To import module we can use: import module_name
+- To use the various functions we use: module_name.functionName()
+- where module name is the name of the python module
+- functionName() is the name of the function we wish to use from that particular module
+
+Renaming a module:
+-----------------
+- There are situations where the name of the module is a little bit lengthy.
+- Thus importing such a module and using it again and again in your project can be tough, as we will need to type out the name of the module again and again to use any of its functiuons. In sucha situtations we can use ranaming.
+
+- import module_name as m
+- m.functionName()
+
+The from....import statement:
+-----------------------------
+- In some situation we need only a particular attribute/function/class from a module.
+- For that importing the whole module can make your project heavy and bit slow.
+- So to import the paritcular function/class/attribute we use from....import statement
+
+- from module_name import functionName
+- functionName()
+
+Note: dot(.) operator is not needed here because we directly imported that particular attribute/function/class. So we can directly use it.
+
+eg.  # Simple import method
+    import math
+    print(math.factorial(5))
+
+    # rename method
+    import math as m
+    print(m.factorial(5))
+
+    # importing just the factorial function
+    from math import factorial 
+    print(factorial(5))
+
+Some important built-in modules
+-------------------------------
+- There are tons of built-in modules available in python. Following are the few you should surely know
+
+1. math - This module provides access to the mathematical functions defined by the C standard
+Math Module - https://docs.python.org/3/library/math.html
+
+2. random - This module implements pseudo-random number generators for various distributions.
+Random Module - https://docs.python.org/3/library/random.html
+
+3. statistics - This module provides functions for calculating mathematical statistics of numeric(Real-valued) data.
+Statistics Module -  https://docs.python.org/3/library/statistics.html
+
+4. array - In Python we do not have a concept of arrays. But we can use the array module which defines an object type that can compactly represent an array of basic values: characters, integers, floating-point numbers.
+Arrays are sequence types  and behave very much like lists, except that the type of objects stored in them is constrained.
+That means an array containing numeric values will not accept a string value to be stored in it.
+Array Module -  https://docs.python.org/3/library/array.html
+
+5. datetime - The datetime module supplies classes for manipulating dates and times.
+Datetime Module -  https://docs.python.org/3/library/datetime.html 
+
+6. time - This module provides various time-related functions. Most of the functions defined in this module call platform C library functions with the same name.
+Time Module -  https://docs.python.org/3/library/time.html
+
+7. sqlite3 - SQLite is a C library that provides a lightweight disk-based database that doesn't require a separate server process and allows accessing the database.
+SQLite3 Module -  https://docs.python.org/3/library/sqlite3.html
+
+8. urllib - This is a package that collects several modules for working with URLs.
+Urllib Module -  https://docs.python.org/3/library/urllib.html#module-urllib
+
+9. tkinter - The Tkinter package ("Tk interface") is the standard Python interface to the Tk GUI toolkit.
+Tkinter Module -  https://docs.python.org/3/library/tkinter.html#module-tkinter
+
+custom module example
+---------------------
+- create python file named calculator.py and enter the code below 
+
+    #calculator
+
+    def add(num1,num2):
+        return num1+num2
+
+    def sub(num1,num2):
+        return num1-num2
+
+    def multiply(num1,num2):
+        return num1*num2
+
+    def divide(num1,num2):
+        return num1/num2
+
+ Note: These custom modules have to be in same project folder as your current python file, otherwise it would result in a 'Module Not Found' error.
+
+- In your project python file as an example modules.py enter the code below
+
+    # custom module
+
+    import calculator as calc
+
+    a = int(input("Enter the first number:"))
+    b = int(input("Enter the second number:"))
+    print("Addition is", calc.add(a,b))
+
+    from calculator import sub
+
+    print("Subtraction is", sub(a,b))
