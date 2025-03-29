@@ -1,5 +1,5 @@
-Object Oriented Programming concept (OOPS)
-------------------------------------------
+Types of Programming
+--------------------
 - In programming, there are different paradigms or patterns that define how to write and structure our code. Alos, each paradigm has different functionalities and behaviours.
 - There are various types of programming patterns such as,
 1. Structural programming
@@ -8,4 +8,129 @@ Object Oriented Programming concept (OOPS)
 4. Functional programming
 And more
 
-- Therefore, object-oriented programming is one such programming paradigm that provides a means for structuring programs so that properties and behaviours are bundled into individual objects
+- Structural programming structures the code representing the data with some basic functionalities
+- Procedural programming uses functions as building blocks
+- Object-oriented programming is programming paradigm that provides a means for structuring programs so that properties and behaviours are bundled into individual objects
+
+Object Oriented Programming concept (OOPS)
+------------------------------------------
+- OOPs in python is a programming approach that focuses on using objects and classes as the building blocks of the program.
+- It allows developers to develop applications using the OOPs approach with major focus on code reusability.
+- OOPs is an approach for modeling concrete, real-world things, and relations between those things.
+- OOPs model real-world entities as programming objects that have some data associated with them and can perform certain functions.
+
+Principles of OOP
+-----------------
+- Following are the four main principles/pillars/properties of OOP
+1. Abstraction
+2. Encapsulation
+3. Inheritance
+4. Polymorphism
+
+Abstraction:
+-----------
+- means to abstract only the details/data which might concern the user
+- As an example, when we use a mobile phone, we just think about how the touch works, how the fingerprint scanner, home button, camera, etc work. We wont worry about how those things are implemented internally. Those details about the implementation part are hidden from you as a user and you might not worry about it as well. Abstraction is used to hide complex details and show only the necessary parts.
+- Abstraction is abstracting the details that may concern you, which means abstraction involves focusing on the essential elements and ignoring the details that are not important or relevant to you. 
+
+Encapsulation:
+--------------
+- In encapsulation, we try to encapsulate all the data as a single entity.
+- Encapsulation is binding together the data under a single unit
+- It refers to the concept of bundling the data (variables) and methods (functions) that operate on the data into a single unit, called a class. Encapsulation helps protect the integrity of the data by restricting direct access to it and allowing controlled access through methods.
+- In encapsulation, the internal state of an object is hidden from the outside world. This is usually achieved by marking the variables of a class as private or protected, and providing public methods (getters and setters) to access or modify them. This approach ensures that the object's data is manipulated only through these controlled methods, thus reducing the risk of unauthorized or unintended changes.
+- Encapsulation is just like a real-life capsule that your doctor might give you. Inside the capsule, there are various chemical elements mixed to create a single consumable entity. Now, assume that the doctor gives you all those chemical elements and asks you to mix them and take the dosage.Does that make any sense? Ofcourse not! As the consumer, it's not your job to do that.
+- Encapsulation also leads to data abstraction or hiding.
+- It's just like a black box, wherefrom the one end we can pass input, it processes it and givesthe result as an output from the other end. So what happens in the blackbox is completely hidden.
+
+Example program for encapsulation:
+----------------------------------
+class Car:
+    def __init__(self, brand, model, year):
+        self.__brand = brand      # private variable
+        self.__model = model      # private variable
+        self.__year = year        # private variable
+
+    # Getter method for brand
+    def get_brand(self):
+        return self.__brand
+
+    # Setter method for brand
+    def set_brand(self, brand):
+        self.__brand = brand
+
+    # Getter method for model
+    def get_model(self):
+        return self.__model
+
+    # Setter method for model
+    def set_model(self, model):
+        self.__model = model
+
+    # Getter method for year
+    def get_year(self):
+        return self.__year
+
+    # Setter method for year
+    def set_year(self, year):
+        self.__year = year
+
+# Creating an object of the Car class
+my_car = Car("Toyota", "Corolla", 2021)
+
+# Accessing and modifying data using getter and setter methods
+print(my_car.get_brand())  # Output: Toyota
+my_car.set_year(2023)
+print(my_car.get_year())   # Output: 2023
+
+Key Points:
+-----------
+Private Variables:  
+------------------
+- In the example, __brand, __model, and __year are private variables, meaning they can't be accessed directly from outside
+the class.
+
+Getter and Setter Methods: 
+--------------------------
+These are used to control how the private variables are accessed and modified.
+
+- Encapsulation helps in maintaining the integrity of the object and prevents unauthorized access or changes to the data.
+
+Inheritance:
+------------
+- We inherit a lot of things from our parents. Some properties like looks, skin colour, hair, body and not just properties but also behaviours.
+We may inherit all the money, wealth, and fortune
+- Similarly in programming, one element can inherit  various characteristics and capabilities from another element.(Here the element we are refering to is a 'class').
+- It is one of the most important features of OOPs and supports the concept of "reusability". It simply means, when we want to create some feature and there is already such a feature that includes some of the code that we want, then we can derive our feature from the existing one instead of developing from scratch.
+
+Polymorphism:
+-------------
+- the word polymorphism means having many forms
+- ability of something to have more than one form.
+- Consider a geometric shape. As a whole, it's termed as a shape, but that shape can have many forms such as triangle, circle, square, rectangle, oval and more.
+- Similarly, in programming, an operation may exhibit different behaviours in different instances. The behaviour depends upon the types of data used in the operation.
+
+Classes and objects
+------------------
+- building blocks of  OOP
+- Just like lists,tuples and dictionaries, classes are some advanced data structures to store, manipulate and structure the data
+- Tuples, dictionaries, lists store only few attributes but class can store various attributes
+- class is a type of user-defined structure that can store various attributes.
+- (Data - both primitive and user-defined) along with their functionalities, all together as a single unit.
+- These attributes and their functionalities(behaviours) can be accessed via objects.
+
+What is a class?
+----------------
+- blueprint to create objects
+- user-defined prototype for an object that defines the set of attributes that characterize any object of the class.
+-  As an example class is analogous to building blueprint, depending upon which we create various real world building structures whose base plan is same, where else the elevations raised from it can be of different attributes like different colors, doors, windows and other interiors.
+
+Objects:
+--------
+- instance of the class
+- As an example, when class is the blueprint, then different buildings raised from it are different objects 
+- Object has two things,
+    1. Attributes (Data variables of the class)
+    2. Behaviours or Methods (Functions defined in the class)
+- As an example, if building is the object, then color,floors,flats,entrance etc would be the attributes and isReady(), isOccupied(), flatAvailable() etc would be its behaviours that are methods.
+- Each building would have all these data and behaviours different and unique to themselves. 
