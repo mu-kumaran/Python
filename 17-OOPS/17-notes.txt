@@ -1,0 +1,11 @@
+Object Oriented Programming concept (OOPS)
+------------------------------------------
+- In programming, there are different paradigms or patterns that define how to write and structure our code. Alos, each paradigm has different functionalities and behaviours.
+- There are various types of programming patterns such as,
+1. Structural programming
+2. Procedural programming
+3. Object-oriented programming
+4. Functional programming
+And more
+
+- Therefore, object-oriented programming is one such programming paradigm that provides a means for structuring programs so that properties and behaviours are bundled into individual objects
