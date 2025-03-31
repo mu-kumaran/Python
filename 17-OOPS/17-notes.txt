@@ -133,4 +133,178 @@ Objects:
     1. Attributes (Data variables of the class)
     2. Behaviours or Methods (Functions defined in the class)
 - As an example, if building is the object, then color,floors,flats,entrance etc would be the attributes and isReady(), isOccupied(), flatAvailable() etc would be its behaviours that are methods.
-- Each building would have all these data and behaviours different and unique to themselves. 
+- Each building would have all these data and behaviours different and unique to themselves.
+
+Defining a class:
+-----------------
+Syntax:
+-------
+class className:
+#body of the class
+
+- 'class' is the keyword used to define the class in python
+- className is the namne given to the class. Just like the name of the variable or a function, the name of the class has to be meaningful
+- Finally, it is terminated with semicolon
+- Inside the class, we can define the attributes and the functions and the body of the class which should be indented.
+
+eg. class Employee:
+        pass
+
+- In above example, 'pass' keyword is just like a temporary placeholder until we add the required functionalities.
+- The pass statement is simply ignored by the python interpreter and can be seen as a null statement.
+
+eg. class Employee:
+        empName = "John"
+        age = 35
+        designation = "Manager"
+
+- In above example, it won't return any output since a class is just the description
+- To access the attributes of the class, we would need to create an object.
+
+Declaring an object
+-------------------
+syntax:
+-------
+objName = className()
+objName.attributeName
+objName.methodName()
+
+- When we declare an object of the class, at that time the memory is allocated to it and then we can access the attribures and methods of the class
+
+eg. class Employee:
+    name = "john"
+    age = 35
+    designation = "Manager"
+
+    emp1 = Employee()
+    emp2 = Employee()
+    print(emp1.name)
+    print(emp1.age)
+    print(emp1.designation)
+    print(emp2.name)
+    print(emp2.age)
+    print(emp2.designation)
+
+- In above program we get same output from two different objects. Because our code is rigid and not dynamic. Values are already assigned instead of passed as an argument. 
+- But each object is the unique instance of the class and each object has its own attributes and behaviours.
+- To get rid of this problem and to create unique objects we go for constructors. 
+
+ Constructors:
+ -------------
+ - To create a unique object we use constructors, which is used for instantiating an object.
+ - The task of the constructor is to initialize the data members of the class when an object is created.
+
+ Syntax:
+ ------
+ def __init__(self):
+    #body of the constructor
+
+- The attributes that all objects must have, are defined in a method called __init__()
+- Everytime a new object is created, __init__() sets the initial state of the object by assigning the values of the object's properties
+- That is, __init__() initializes each new instance of the class.
+
+Types of constructors
+---------------------
+1. Default constructor:
+-----------------------
+    The default constructor is the constructor that doesn't accept any arguments. Its definition has only one argument(self- we wil discuss this later) which is a reference to the instance being constructed.
+
+2. Parameterized constructor:
+-----------------------------
+    The parameterized constructor takes its first argument as a reference to the instance being constructed known as self and the rest of the arguments are provided. These are the required attributes for the class.
+
+Note:
+-----
+- When our class has a default constructor, then we can use the syntax , objName = className()
+
+eg. class Employee_1:
+    def __init__(self):
+        self.name = "John"
+        self.age = 35
+        self.designation = "Manager"
+
+    emp1 = Employee_1()
+    print(emp1.name,emp1.age,emp1.designation)
+
+- If we donot assign any constructor to our class, python automatically assigns the default constructor to the class
+- If our class has a parameterized constructor, then we use the syntax, objName = className(parameter1,parameter2,.....parameterN)
+
+eg. class Employee_2:
+    def __init__(self,name,age,designation):
+        self.name = name
+        self.age = age
+        self.designation = designation
+
+    emp_1 = Employee_2('Hari',45,'Sr.Manager')
+    emp_2 = Employee_2('Vinoth',30,'Manager')
+    print(emp_1.name,emp_1.age,emp_1.designation)
+    print(emp_2.name,emp_2.age,emp_2.designation)
+
+- 'self' keyword helps the class to understand which current object is accessing the attributes and methods and accordingly return the output.
+- 'self' keyword used to represent the current instance of the class
+
+Adding Behaviours and methods:
+------------------------------
+- Functions defined inside the classes are called methods
+- Variables assigned inside the classes are called attributes or behaviours
+
+class variable and instance variable:
+-------------------------------------
+eg. class Employee:
+    totalEmployees = 0
+
+    def __init__(self,name,age,designation,salary):
+        self.name = name
+        self.age = age
+        self.designation = designation
+        self.salary = salary
+        Employee.totalEmployees += 1
+
+- Here we can see, totalEmployees is not defined inside the __init__method, and also it is not passed inside the constructor.
+- This is because that value has to be calculated by the program and should not be passsed at the time of object creation
+- Whenever a new object (that is a new employee) is created, we need to update that value by one.
+- As we know whenever a new object is created, the __init__method is called. Therefore we update the value by 1 in the __init__method.
+- Since this attribute does not depend on the object, we cannot use 'self' to refer to it. Therefore, we directly use the name and access it Employee.totalEmployees
+- Such variables that are shared by all the instances(objects) are called Class variables. And the variables that are defined inside __init__ are called Instance variables.
+
+Adding methods:
+--------------
+eg. def getEmployeeDetails(self):
+        return self.name,self.age,self.designation,self.salary
+    
+    def updateSalary(self,newSalary):
+        self.salary = newSalary
+        print("Salary updated")
+        return self.salary
+
+- The getEmployeeDetails() simply returns all the details about the employee
+- The updateSalary() method accepts a parameter as newSalary and updates the self.salary to the passed value.
+
+Total code:
+----------
+
+class Employee:
+    totalEmployees = 0
+
+    def __init__(self,name,age,designation,salary):
+        self.name = name
+        self.age = age
+        self.designation = designation
+        self.salary = salary
+        Employee.totalEmployees += 1
+
+    def getEmployeeDetails(self):
+        return self.name,self.age,self.designation,self.salary
+    
+    def updateSalary(self,newSalary):
+        self.salary = newSalary
+        print("Salary updated")
+        return self.salary
+    
+empOne = Employee('Srinivasan',28,'Jr.developer',25000)
+print(empOne.getEmployeeDetails())
+empTwo = Employee('Nagulan',38,'Manager',40000)
+print(empTwo.getEmployeeDetails())
+empOne.updateSalary(30000)
+print(empOne.getEmployeeDetails())
+print(Employee.totalEmployees)
