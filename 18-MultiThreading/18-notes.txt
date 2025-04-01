@@ -1,0 +1,8 @@
+MultiThreading (Multitasking)
+--------------
+Introduction
+------------
+- Many times, while using the computer, you might have performed multiple tasks at the same time such as coding on your IDE, listening to songs, brwosing on the browser and more
+- As a human, we often perform multiple tasks at the same time, and this is termed as multitasking.
+- Similarly, in the above example, the computer is also executing various tasks at the same time such as running the code editor, playing the song, running the browser and more.
+- Modern computers have the ability to perform multiple tasks at the same time, which is also called multitasking in simple words and multithreading in programming terms. 

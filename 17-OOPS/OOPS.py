@@ -77,5 +77,29 @@ intern1 = Intern('Manoj',32,'Python developer intern',450000,6)
 print(intern1.getEmployeeDetails())  
 print(intern1.getPeriod())  
 
+# Method overriding
+class Baseclass():
+    def method(self):
+        print("Base class method called")
+
+class DerivedClass(Baseclass):
+    def method(self):
+        print("Derived class method is called")
+
+obj1 = DerivedClass()
+obj1.method()
+
+class father():
+    def name(self):
+        print("Name of the father: Murugesan")
+
+class son(father):
+    def name(self):
+        print("Name of the son: Thangappan")
+
+obj_dad = father()
+obj_son = son()
+obj_dad.name()
+obj_son.name()
 
 

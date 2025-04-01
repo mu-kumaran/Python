@@ -427,3 +427,56 @@ class Employee(Company):
     pass
 class Intern(Company):
     pass
+
+Polymorphism
+-------------
+- Polymorphism = Poly(Many) +  Morphism(Forms)
+- Thus we can understand that polymorphism means something that can have many forms.
+- In OOP, object can have various forms in different situations depending upon the attributes and methods.
+
+Basis types:
+-----------
+- There are two basic types of polymorphism in OOP,
+1. Method Overloading
+2. Method Overriding
+
+Method Overloading:
+-------------------
+- It is the situation where there are two methods of the same name but with different parameters in the same class.
+- There are situations where a method can have different parameters so that they can perform different functionalities as required.
+- Consider the example method named area() which behave differently depending on the parameters passed. If we want to find the area of the rectangle then parameters would be length and breadth. If we want to find the area of the square, then parameter would be just the side of the square.
+
+Pseudocode:
+-----------
+class Geometry:
+    method area(length,breadth)
+        return length*breadth
+    method area(side)
+        return side*side
+
+- Now when we make a call to the method area(), and if two parameters are passed, then it will find the area of the rectangle whereas if one parameter is passed, it will find the area of a square.
+- One method but different forms! This is how the situation of Method Overloading works in Polymorphism.
+
+Important note:
+--------------
+- Method overloading is not supported in Python.
+- It is supported by the various other OOP programming languages like Java,C++,C# and more.
+
+Method Overriding
+-----------------
+- Overriding is the situation where there are two methods with the same name and the same parameters but in two different classes.
+- Method overriding will only come into the picture if the inheritance is involved. This means the child class has a method with the same name and the same parameters as the method in the parent class
+
+eg. class Baseclass():
+        def method(self):
+            print("Base class method called")
+
+    class DerivedClass(Baseclass):
+        def method(self):
+            print("Derived class method is called")
+
+    obj1 = DerivedClass()
+    obj1.method()
+
+- we can override the method s from the parent class. 
+- One of the reasons for overriding parent's methods is because you may want special  or different functionality in your subclass i.e. your derived class

@@ -60,3 +60,64 @@ lambda arguments: expression
 eg. add = lambda num1,num2: num1+num2
     print(add(80,20))
 
+map, filter and reduce functions
+--------------------------------
+- In Python, map(), filter(), and reduce() are powerful built-in functions used for functional programming, enabling you to apply a function to each item in an iterable, filter elements based on a condition, and reduce an iterable to a single value, respectively
+
+map():
+-----
+- Applies a given function to each item of an iterable (like a list, tuple, etc.) and returns a new iterable (an iterator) with the results.
+
+eg. def square(x):
+        return x*x
+
+    numbers = [1,2,3,4,5]
+    squared_numbers = map(square,numbers)
+    print(list(squared_numbers))
+
+filter():
+--------
+- Creates a new iterable (an iterator) containing only the elements from the input iterable that satisfy a given condition (function).
+
+eg. def is_even(x):
+    return x%2 == 0
+
+    numbers = [1,2,3,4,5,6]
+    even_numbers = filter(is_even,numbers)
+    print(list(even_numbers))
+
+reduce():
+---------
+- Applies a function to an iterable (like a list) cumulatively, reducing it to a single value. 
+- Note: reduce() is not built-in function in Python 3; it's part of the functools module. 
+
+eg. from functools import reduce
+    def add(x,y):
+        return x+y
+
+    numbers = [1,2,3,4,5,6,7,8,9,10]
+
+    sum = reduce(add,numbers)
+    print(sum)
+
+round():
+--------
+- used to round the float numbers to the required number of decimal places
+
+syntax: 
+-------
+round(number to round, no of decimal places)
+
+eg. print(round(38.56789,3))
+
+range():
+-------
+- used to produce defined range of numbers
+
+syntax:
+-------
+range(start,end,steps)
+
+eg. even_numbers = list(range(2,10,2))
+    odd_numbers = list(range(1,10,2))
+    whole_numbers = list(range(10))
