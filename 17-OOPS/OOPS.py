@@ -49,6 +49,18 @@ class Employee:
         self.salary = newSalary
         print("Salary updated")
         return self.salary
+
+class InternOne(Employee):
+    pass
+
+class Intern(Employee):
+    def __init__(self, name, age, designation, salary,internPeriod):
+        self.internPeriod = internPeriod
+        # super().__init__(name, age, designation, salary)
+        Employee.__init__(self,name,age,designation,salary)
+    
+    def getPeriod(self):
+        return 'Internship period (in months) is', self.internPeriod
     
 empOne = Employee('Srinivasan',28,'Jr.developer',25000)
 print(empOne.getEmployeeDetails())
@@ -57,7 +69,13 @@ print(empTwo.getEmployeeDetails())
 empOne.updateSalary(30000)
 print(empOne.getEmployeeDetails())
 print(Employee.totalEmployees)
-        
+
+internOne = InternOne('Tom',22,'Marketing Intern',120000)
+print(internOne.getEmployeeDetails())        
+
+intern1 = Intern('Manoj',32,'Python developer intern',450000,6)
+print(intern1.getEmployeeDetails())  
+print(intern1.getPeriod())  
 
 
 

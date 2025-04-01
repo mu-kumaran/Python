@@ -243,10 +243,10 @@ eg. class Employee_2:
 - 'self' keyword helps the class to understand which current object is accessing the attributes and methods and accordingly return the output.
 - 'self' keyword used to represent the current instance of the class
 
-Adding Behaviours and methods:
+Adding Attributes and Methods:
 ------------------------------
-- Functions defined inside the classes are called methods
-- Variables assigned inside the classes are called attributes or behaviours
+- Functions defined inside the classes are called methods or behaviours
+- Variables assigned inside the classes are called attributes or properties
 
 class variable and instance variable:
 -------------------------------------
@@ -281,7 +281,7 @@ eg. def getEmployeeDetails(self):
 - The updateSalary() method accepts a parameter as newSalary and updates the self.salary to the passed value.
 
 Total code:
-----------
+-----------
 
 class Employee:
     totalEmployees = 0
@@ -308,3 +308,122 @@ print(empTwo.getEmployeeDetails())
 empOne.updateSalary(30000)
 print(empOne.getEmployeeDetails())
 print(Employee.totalEmployees)
+
+Inheritance:
+------------
+- Sub class or child class inherits the properties and behaviours from the parent class
+- Or one class can inherit various characteristics(attributes) and capabilities(methods or behaviours) from another class
+- As an example in previous section we have seen the Employee class. Now we need the new class for interns in our organization, But interns is also a kind of employee who have properties such as name,age etc and also might have some additional details.
+- In such scenario we can inherit all those data from the Employee class rather than creating again in the intern class. This is what called reusability. So Inheritance brings reusability in code.
+
+Terminologies in Inheritance:
+-----------------------------
+1. Parent class : The class being inherited by the other classes. It is also called the Base class.
+2. Child class: The class that inherits from another class. It is also called a Derived class.
+
+Syntax:
+-------
+class BaseClass:
+    #body of the base class
+class DerivedClass(Base class):
+    #body of the derived class
+
+- As you can see, when we want to implement inheritance, we can pass the name of the parent class in the paranthesis while we define the child class
+
+eg. class Intern(Employee):
+        pass
+
+- In above example we have created an empty Intern class which inherits the properties from the Employee class.
+- If we create an object of the child class, we will be able to access the attributes and methods from the Employee class.
+- Whenever we create an object of the child class and try to access something, it will first search for that in the child class, if found then it will execute it and return the data. IF not found, then it will search and access the data from the parent class.
+
+eg. internOne = Intern('Tom',22,'Marketing Intern',12000)
+ output: ('Tom',22,'Marketing Intern',120000)
+
+Adding attributes and methods to the child class
+-------------------------------------------------
+
+eg. class Intern(Employee):
+        def __init__(self, name, age, designation, salary,internPeriod):
+            self.internPeriod = internPeriod
+            # super().__init__(name, age, designation, salary)
+            Employee.__init__(self,name,age,designation,salary)
+        
+        def getPeriod(self):
+            return 'Internship period (in months) is', self.internPeriod
+    
+    intern1 = Intern('Manoj',32,'Python developer intern',450000,6)
+    print(intern1.getEmployeeDetails())  
+    print(intern1.getPeriod())  
+
+- To add attributes to the child class rather than defining all those attributes again, we simply define only the attributes that are new for the child class, and for the other attributes, we make a call to the constructor of the base class within the constructor of the derived class using the following syntax:
+    
+    BaseClass.__init__(self,parameter1,parameter2,.....parameterN)
+
+    or using 'super' keyword which defines the parent class
+
+    super().__init__(parameter1,parameter2,......parameterN)
+
+Types of inheritance:
+---------------------
+1. Single inheritance (As we seen above already, which is a normal inheritance)
+2. Multilevel inheritance
+3. Multiple inheritance
+4. Hierarchial inheritance
+
+Multilevel inheritance:
+-----------------------
+            Class A
+                |
+            Class B
+                |
+            Class C
+
+- In multilevel inheritance, attributes and behaviours of the base class and the derived class are further inherited into the new derived class
+
+Pseudocode:
+-----------
+class Employee:
+    pass
+class Intern(Employee):
+    pass
+class Bonus(Intern):
+    pass
+
+
+Multiple Inheritance
+--------------------
+        class A                 class B
+            |______________________|
+                        |
+                     class C
+
+- When a class can be derived from more than one base class then its is called multiple inheritance
+
+Pseudocode:
+----------
+class Company:
+    pass
+class Employee:
+    pass
+class Intern(Company,Employee):
+    pass
+
+Hierarchial inheritance:
+-----------------------
+                            class A
+                                |
+                ____________________________________ 
+                |                                   |
+            class B                              class C
+
+- When more than base class is created from a single base class, then it is called hierarchial inheritance
+
+Pseudocode:
+----------
+class Company:
+    pass
+class Employee(Company):
+    pass
+class Intern(Company):
+    pass
