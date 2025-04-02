@@ -6,3 +6,48 @@ Introduction
 - As a human, we often perform multiple tasks at the same time, and this is termed as multitasking.
 - Similarly, in the above example, the computer is also executing various tasks at the same time such as running the code editor, playing the song, running the browser and more.
 - Modern computers have the ability to perform multiple tasks at the same time, which is also called multitasking in simple words and multithreading in programming terms. 
+
+Important note :
+---------------
+- multithreading is all about quickly switching between different tasks but not at the sametime (means not simultaneously or not parallely) which is called concurrency.concurrency is all about managing multiple tasks. So switching between different tasks doesn't mean running different tasks simultaneously. 
+- As an eg. single chef cooks and give the several dishes one by one very fastly looks like multiple chefs prepared the multiple dishes at a time  
+
+Multiple tasks
+--------------
+- As we have seen, we perform multiple tasks daily. Similarly, computers can slo perform various tasks at the sametime.
+- For eg. If you are coding Python, one task that the computer could do is run the python IDE.
+- Now if you gets an error, you might directly switch to your browser and search that error on google. Here, the computer will have to handle another task of executing the browser.
+- Therefore in this way, there would be many scenarios where the computer might need to multitask.
+
+Breaking Down
+-------------
+- Each tasks on the computer is handled by a process. Each process is handled by something called a thread.
+- Thus at the most basic level, a thread is responsible for executing the various tasks on the computer.
+
+            Task ---> Process ---> Thread
+
+What is the Process?
+-------------------
+- A process is basically the program in execution. When you start an application on your computer, the operating system creates a process.
+- A process is an instance of computer program being executed
+
+What is Thread?
+---------------
+- A thread is an entity within the process that can be scheduled for execution. Also, it is the smallest unit of processing that can be performed in an Operating system.
+- In simple words, a thread is a sequence of instructions within a program that can be executed independently of other code.
+- A thread is the smallest sequence of programmed instructions that a scheduler can manage independently. It's essentially a set of instructions that can be executed by a CPU core. 
+
+Threads vs cores
+----------------
+- A core is a physical processing unit within a CPU, capable of executing instructions. 
+- Threads: allow a single core to handle multiple tasks concurrently, providing the illusion of concurrent execution. 
+
+What is multithreading?
+----------------------
+- ability of a processor to execute multiple threads concurrently (which means one by one fastly)
+- Central Processing Unit (CPU) or a single core in a multi-core processor executes multiple processes or threads concurrently, appropriately supported by the operating system
+
+Multithreading vs Multiprocessing
+---------------------------------
+- As with multithreading the processes and threads have to share the resources of a single or multiple cores. Multithreading aims to increase the utilization of a single core by using thread-level as well as instruction-level parallelism
+- While multiprocessing systems include multiple processing units means multiple CPU's
