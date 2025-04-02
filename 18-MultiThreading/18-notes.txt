@@ -47,6 +47,11 @@ What is multithreading?
 - ability of a processor to execute multiple threads concurrently (which means one by one fastly)
 - Central Processing Unit (CPU) or a single core in a multi-core processor executes multiple processes or threads concurrently, appropriately supported by the operating system
 
+Example:
+ - Assume that you are using Amazon. While using you might search for the items you wish to buy. So you would click on the search button, one thread will fetch the data from the database related to earphones. 
+ - Another thread (which is the main thread), will maintain the current screen until the search thread fetches the data.
+ - Therefore at the sametime two tasks are running, on the backgorund (which is the search thread) and the second is the main thread (which maintains the current screen on the app until the search thread completes fetching the data)   
+
 Multithreading vs Multiprocessing
 ---------------------------------
 - As with multithreading the processes and threads have to share the resources of a single or multiple cores. Multithreading aims to increase the utilization of a single core by using thread-level as well as instruction-level parallelism
