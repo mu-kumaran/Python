@@ -1,4 +1,5 @@
 #palindrome check
+
 print("Palindrome Check :")
 name = input("Enter the string:")
 rev_name = ""
