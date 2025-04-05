@@ -1,11 +1,15 @@
-#palindrome check
-print("Palindrome Check :")
-name = input("Enter the string:")
-rev_name = ""
-for i in range(1,len(name)+1):
-    rev_name += name[-i]
-print("Given name on reverse:",rev_name)
-if(name == rev_name):
-    print("Its a palindrome")
-else:
-    print("Its not a palindrome")
+# print("Prime number check")
+# num = int(input("Enter the number:"))
+# if(num <= 1):
+#     print("Its not a prime")
+# else:
+#     for i in range(2,int(num**0.5)+1):
+#             print(i)
+#             if(num%i==0):
+#                 print(f"Its not a prime. It is divisible by {i}")
+#                 break
+#     else:
+#         print("Its a prime number")
+
+num = 9
+print(int(num**0.5)+1)
