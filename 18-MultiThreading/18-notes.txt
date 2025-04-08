@@ -56,3 +56,41 @@ Multithreading vs Multiprocessing
 ---------------------------------
 - As with multithreading the processes and threads have to share the resources of a single or multiple cores. Multithreading aims to increase the utilization of a single core by using thread-level as well as instruction-level parallelism
 - While multiprocessing systems include multiple processing units means multiple CPU's
+
+Modules for threading in python:
+-------------------------------
+- Python provides following two modules to implement threading in python
+    1. The thread module
+    2. The threading module
+
+- thread module has long been deprecated in python3. Now only threading module is used
+
+Threading module
+----------------
+- The Threading module is the high-level implementation of threading in python and the defacto standard for managing multithreaded applications
+
+Functions provided by threading module:
+
+- activeCount() - returns the count of thread objects which are still alive
+- currentThread() - returns the current object of the Thread class
+- enumerate() - returns the lists of all active Thread objects
+- isDaemon() - returns true if the thread is a daemon 
+- isAlive() - returns true if the thread is still alive
+
+Thread class
+------------
+- The thread class is the primary class that defines the template and the operations of a thread in python
+- It provides all functionalities required to create and manage a thread
+- The most simple way to create a multithreaded python application is to declare a class that inherits from the Thread class and override it's run method()
+- Therefore, every Thread class has a run() method, and to implement threading, one should override the run() method in their respective classes.
+- Once we inherit a class from the Thread class in the threading module, we can create a Thread object from it.
+- Normally, the whole program is executed by something called the main() thread, but when we create a thread object, each object represents an activity to be performed in a separate a thread of control.
+
+Thread Class Methods
+--------------------
+run() - It denotes the activity of a thread and can be overrridden by a class that extends the Thread class
+start() - It starts tha activity of a thread. It must be called only once for each thread because it will throw a runtime error if called multiple times
+join() - It blocks the execution of other code until the thread on which the join() method was called gets terminated.
+
+- This is how it works,
+    Once a thread object has been made, the start() method can be used to begin the execution of the activity, and the join() method can be used to block all other code till the current activity finishes. 

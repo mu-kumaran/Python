@@ -11,5 +11,6 @@
 #     else:
 #         print("Its a prime number")
 
-num = 9
-print(int(num**0.5)+1)
+num = 8
+print(num**0.5)
+print(int(num**0.5))
