@@ -478,5 +478,5 @@ eg. class Baseclass():
     obj1 = DerivedClass()
     obj1.method()
 
-- we can override the method s from the parent class. 
+- we can override the methods from the parent class. 
 - One of the reasons for overriding parent's methods is because you may want special  or different functionality in your subclass i.e. your derived class

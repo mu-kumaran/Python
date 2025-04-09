@@ -10,7 +10,7 @@ Introduction
 Important note :
 ---------------
 - multithreading is all about quickly switching between different tasks but not at the sametime (means not simultaneously or not parallely) which is called concurrency.concurrency is all about managing multiple tasks. So switching between different tasks doesn't mean running different tasks simultaneously. 
-- As an eg. single chef cooks and give the several dishes one by one very fastly looks like multiple chefs prepared the multiple dishes at a time  
+- As an eg. single chef cooks and serve the several dishes one by one very fastly looks like multiple chefs prepare and serve the multiple dishes at a time  
 
 Multiple tasks
 --------------
@@ -94,3 +94,307 @@ join() - It blocks the execution of other code until the thread on which the joi
 
 - This is how it works,
     Once a thread object has been made, the start() method can be used to begin the execution of the activity, and the join() method can be used to block all other code till the current activity finishes. 
+
+Normal program:
+--------------
+
+class Example:
+    def run(self):
+        for i in range(5):
+            print("Hello from Example")
+
+class ExampleTwo:
+    def run(self):
+        for i in range(5):
+            print("Hello from ExampleTwo")
+
+eg = Example()
+eg2 = ExampleTwo()
+eg.run()
+eg2.run()
+
+- In above program, First it will execute run() from  Example class and then it will execute run() from ExampleTwo class
+
+output:
+-------
+Hello from Example
+Hello from Example
+Hello from Example
+Hello from Example
+Hello from Example
+Hello from ExampleTwo
+Hello from ExampleTwo
+Hello from ExampleTwo
+Hello from ExampleTwo
+
+- Now let's use the Threading module and make our program execute these methods simultaneously.
+
+Implementing Threading:
+----------------------
+- To implement threading, we would need to do the following three things,
+
+1. Import threading module
+2. Inherit from the Thread class and override the run() method
+3. Start the execution of the threads using the start() method
+
+program:
+-------
+from threading import*
+
+class Example(Thread):
+    def run(self):
+        for i in range(5):
+            print("Hello from Example")
+
+class ExampleTwo(Thread):
+    def run(self):
+        for i in range(5):
+            print("Hello from ExampleTwo")
+
+eg = Example()
+eg2 = ExampleTwo()
+eg.start()
+eg2.start()
+
+output:
+-------
+Hello from Example
+Hello from ExampleTwoHello from Example
+
+Hello from ExampleTwoHello from Example
+
+Hello from ExampleTwoHello from Example
+
+Hello from ExampleHello from ExampleTwo
+
+Hello from ExampleTwo
+
+- From above output we can determine the concurrency of the program using threading module
+- But the above program works concurrently not simultaneously.
+- What we want our program to do is, if once the run() method is called from the both the classes, the loop should execute the logic once and the wait for the other class to do the work 
+- To achieve that, we would need to ask our loop to wait for a second and let the other loop execute the logic once and then carry its execution.
+- This process has to be done repeatedly. Execute --> Wait --> Execute
+
+Time
+----
+- We can make our code wait for a while by using the Time module. It helps us to work with "time" in Python.
+- We can use sleep method which accepts time in seconds as parameters and makes the code go to sleep(wait) for that amount of time.
+
+program:
+--------
+from threading import*
+from time import sleep
+
+class ExampleOne(Thread):
+    def run(self):
+        for i in range(10):
+            print("Hello from Example One ")
+            sleep(1)
+
+class ExampleTwo(Thread):
+    def run(self):
+        for i in range(10):
+            print("Hello from Example Two ")
+            sleep(1)
+
+eg = ExampleOne()
+eg2 = ExampleTwo()
+eg.start()
+sleep(0.1)
+eg2.start()
+
+output:
+-------
+Hello from Example One 
+Hello from Example Two 
+Hello from Example One 
+Hello from Example Two 
+Hello from Example One 
+Hello from Example Two 
+Hello from Example One 
+Hello from Example Two 
+Hello from Example One 
+Hello from Example Two 
+Hello from Example One 
+Hello from Example Two 
+Hello from Example One 
+Hello from Example Two 
+Hello from Example One 
+Hello from Example Two 
+Hello from Example One 
+Hello from Example Two 
+Hello from Example One 
+Hello from Example Two
+
+Problems on Main thread:
+-----------------------
+- Each process is handled by a thread, therefore, when we execute any Python program, there is one thread already running by default called the main thread.
+- The main thread is responsible for the execution of the programs in Python.
+-  That said in tha last example, the main thread had nothing to do. Its job was to create two threads, the rest was handled by the new threads.
+
+from threading import*
+from time import sleep
+
+class ExampleOne(Thread):
+    def run(self):
+        --------
+
+class ExampleTwo(Thread):
+    def run(self):
+        --------
+
+eg = ExampleOne()
+eg2 = ExampleTwo()
+eg.start()
+sleep(0.1)
+eg2.start()
+print("End of the program")
+
+output:
+Hello from Example One 
+Hello from Example Two 
+End of the program
+Hello from Example One 
+Hello from Example Two 
+Hello from Example One 
+Hello from Example Two 
+
+- In above output "End of the program" is expected to be printed in the end. But that's not the case here.
+- This is because once the main thread creates two new threads, its job is done. The rest of the work is handled by the newly created threads.
+- The main thread looks for any more statements to execute and thus prints the final statement without realizing that the other two threads are still in execution.
+- This is the problem with the main thread.
+- We need to handle this and tell the other two threads are done executing their part and then join the party! Thread class can provide the join() method for this.
+
+join()
+------
+- The join() method blocks the execution of other code(work of main thread) until the thread on which the join() method is called gets terminated.
+
+program:
+--------
+.
+.
+.
+.
+eg = ExampleOne()
+eg2 = ExampleTwo()
+eg.start()
+sleep(0.1)
+eg2.start()
+eg.join()
+eg2.join()
+print("End of the program")
+
+output:
+------
+Hello from Example One 
+Hello from Example Two 
+Hello from Example One 
+Hello from Example Two 
+Hello from Example One 
+Hello from Example Two 
+Hello from Example One 
+Hello from Example Two 
+End of the program
+
+Problems in Multithreading
+--------------------------
+- Implementing multithreading is often referred to as concurrent programming
+- Creating applications that support concurrency is the need of the hour,but working with concurrent programming is bit complicated.
+- In multithreading, two important problems(situations) that we might encounter,
+    1. Deadlocks
+    2. Race conditions
+
+Deadlocks
+---------
+- It is the situation where a set of processes are blocked because each process is holding a resoource and waiting for another resource aquired by some other process
+- The best way to understand deadlocks is by using classic computer science problem known as the Dining Philosophers problem
+
+Dining Philosophers problem
+---------------------------
+- Five philosophers are seated on a round table with five plates of sphagetti and five forks
+- At any given time, a philosopher must either eat or think
+- Moreover, a philosopher must take the two forks adjacent to him (i.e. the left and right forks) before he can eat a sphagetti. The problem of deadlock occurs when all the five philosophers pick up their right forks simultaneously.
+- Since each of the philosophers has one fork, they will all wait for the others to put their fork down. As a result, none of them will be able to eat spaghetti
+- Similarly in a concurrent system, a deadlock occurs when different threads or processes(philosophers) try to acquire the shared system resources(forks) at the sametime.
+- As a result, none of the processes get a chance to execute as they are waiting for another resource held by some other process
+
+Race conditions
+---------------
+- A race condition is an undesirable situation that occurs when a device or system attempts to perform two or more operations at the sametime, but because of the nature of the device or system, the perations must be done in the proper sequence to be done correctly.
+
+eg. i=0;
+    for x in range(100):
+        print(i)
+        i += 1
+
+- If we create 'n' number of threads that run this code at once, you cannot determine the value of i(which is shared by the threads) when the program finishes execution.
+- This is because in a real multithreading environment, the threads can overlap, and the value of i which was retrieved and modified by a thread can change in between when some other thread accessess it.           
+
+Synchronization
+---------------
+- To deal with race conditions, deadlocks and other thread-based issues, the threading module provides the Lock object.
+- In the threading module, a primitive lock is used. This lock helps us in the synchronization of two or more threads.
+- When a thread wants access to a specific resource, it acquires a lock for that resource.
+- Once a thread locks a particular resource, no other thread can access it until the lock is released.
+- As a esult, the changes to the resource will be atomic i.e. no half-modified values being available to other threads, and race conditions will be averted.
+
+Lock object
+-----------
+- A lock is a low-level synchronization primitive implemented by the threading module. At any given time, a lock can be in one of two states: locked or unlocked
+- Following are the two main methods of the lock object,
+    1. acquire() - When the lock-state is unlocked, calling the acquire method will change the state to locked and return. However, if the state is locked, the call to acquire() is blocked until the release() method is called by some other thread.
+    2. release() - The release() method is used to set the state to unlocked, that is to release a lock. It can be called by any thread, not necessarily the one that acquired the lock.
+
+program
+-------
+from threading import*
+import threading
+from time import sleep
+
+lock = threading.Lock()
+class ExampleOne(Thread):
+    def run(self):
+        for i in range(5):
+            lock.acquire()
+            print("lock acquired")
+            print("Hello from Example One ")
+            sleep(1)
+            lock.release()
+
+class ExampleTwo(Thread):
+    def run(self):
+        for i in range(5):
+            lock.acquire()
+            print("lock acquired")
+            print("Hello from Example Two ")
+            sleep(1)
+            lock.release()
+
+eg = ExampleOne()
+eg2 = ExampleTwo()
+eg.start()
+sleep(0.1)
+eg2.start()
+
+Result
+------
+lock acquired
+Hello from Example One
+lock acquired
+Hello from Example Two
+lock acquired
+Hello from Example One
+lock acquired
+Hello from Example Two
+lock acquired
+Hello from Example One
+lock acquired
+Hello from Example Two
+lock acquired
+Hello from Example One
+lock acquired
+Hello from Example Two
+lock acquired
+Hello from Example One
+lock acquired
+Hello from Example Two
