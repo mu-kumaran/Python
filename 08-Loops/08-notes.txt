@@ -52,7 +52,7 @@ eg. i=0
 
 break statement:
 ----------------
-- used to teminate the loop or statement in which its is present
+- used to teminate the loop or statement in which it is present
 - control then passes to the statements that are present after the loop block ends
 - If the break statement is present in the nested loop, then it terminates only those Loops
   which contain a break statement
