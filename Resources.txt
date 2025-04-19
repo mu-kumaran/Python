@@ -4,3 +4,4 @@ Resources:
 - CodingX application
 - https://www.py4e.com/
 - freecodecamp.org
+- aiplanet.com
