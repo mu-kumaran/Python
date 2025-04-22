@@ -15,13 +15,13 @@ class School:
         print("")
         
 
-    def updateStaffStrength(self,newStaff):
-        self.staff_strength = newStaff
+    def updateStaffStrength(self,newStaffStrength):
+        self.staff_strength = newStaffStrength
         print("No of staffs updated as",self.staff_strength,"in",self.name)
         return self.staff_strength
     
-    def updateStudentStrength(self,newStudent):
-        self.student_strength = newStudent
+    def updateStudentStrength(self,newStudentStrength):
+        self.student_strength = newStudentStrength
         print("No of students updated as",self.student_strength,"in",self.name)
         return self.student_strength
     

@@ -1,6 +1,6 @@
 Types of Programming
 --------------------
-- In programming, there are different paradigms or patterns that define how to write and structure our code. Alos, each paradigm has different functionalities and behaviours.
+- In programming, there are different paradigms or patterns that define how to write and structure our code. Also, each paradigm has different functionalities and behaviours.
 - There are various types of programming patterns such as,
 1. Structural programming
 2. Procedural programming
@@ -30,8 +30,9 @@ Principles of OOP
 Abstraction:
 -----------
 - means to abstract only the details/data which might concern the user
-- As an example, when we use a mobile phone, we just think about how the touch works, how the fingerprint scanner, home button, camera, etc work. We wont worry about how those things are implemented internally. Those details about the implementation part are hidden from you as a user and you might not worry about it as well. Abstraction is used to hide complex details and show only the necessary parts.
 - Abstraction is abstracting the details that may concern you, which means abstraction involves focusing on the essential elements and ignoring the details that are not important or relevant to you. 
+- As an example, when we use a mobile phone, we just think about how the touch works, how the fingerprint scanner, home button, camera, etc work. We wont worry about how those things are implemented internally. Those details about the implementation part are hidden from you as a user and you might not worry about it as well. Abstraction is used to hide complex details and show only the necessary parts.
+
 
 Encapsulation:
 --------------
@@ -41,7 +42,7 @@ Encapsulation:
 - In encapsulation, the internal state of an object is hidden from the outside world. This is usually achieved by marking the variables of a class as private or protected, and providing public methods (getters and setters) to access or modify them. This approach ensures that the object's data is manipulated only through these controlled methods, thus reducing the risk of unauthorized or unintended changes.
 - Encapsulation is just like a real-life capsule that your doctor might give you. Inside the capsule, there are various chemical elements mixed to create a single consumable entity. Now, assume that the doctor gives you all those chemical elements and asks you to mix them and take the dosage.Does that make any sense? Ofcourse not! As the consumer, it's not your job to do that.
 - Encapsulation also leads to data abstraction or hiding.
-- It's just like a black box, wherefrom the one end we can pass input, it processes it and givesthe result as an output from the other end. So what happens in the blackbox is completely hidden.
+- It's just like a black box, wherefrom the one end we can pass input, it processes it and gives the result as an output from the other end. So what happens in the blackbox is completely hidden.
 
 Example program for encapsulation:
 ----------------------------------
@@ -172,9 +173,9 @@ objName.methodName()
 - When we declare an object of the class, at that time the memory is allocated to it and then we can access the attribures and methods of the class
 
 eg. class Employee:
-    name = "john"
-    age = 35
-    designation = "Manager"
+        name = "john"
+        age = 35
+        designation = "Manager"
 
     emp1 = Employee()
     emp2 = Employee()
@@ -251,7 +252,7 @@ Adding Attributes and Methods:
 class variable and instance variable:
 -------------------------------------
 eg. class Employee:
-    totalEmployees = 0
+        totalEmployees = 0
 
     def __init__(self,name,age,designation,salary):
         self.name = name
@@ -261,7 +262,7 @@ eg. class Employee:
         Employee.totalEmployees += 1
 
 - Here we can see, totalEmployees is not defined inside the __init__method, and also it is not passed inside the constructor.
-- This is because that value has to be calculated by the program and should not be passsed at the time of object creation
+- This is because that value has to be calculated by the program and should not be passed at the time of object creation
 - Whenever a new object (that is a new employee) is created, we need to update that value by one.
 - As we know whenever a new object is created, the __init__method is called. Therefore we update the value by 1 in the __init__method.
 - Since this attribute does not depend on the object, we cannot use 'self' to refer to it. Therefore, we directly use the name and access it Employee.totalEmployees
