@@ -1,6 +1,6 @@
 File Handling
 -------------
-- There are instances wherer we need to store and retrieve data from files
+- There are instances where we need to store and retrieve data from files
 - Files are named locations on disk to store  related information. 
 - Files are used to permanently store data in a non-volatile memory such as hard disks and more, whereas variables and other structures store data in Random Access Memory(RAM), Which is volatile and loses its data when the computer is turned off.
 - Files can be of any type such as .txt files, .csv files and more

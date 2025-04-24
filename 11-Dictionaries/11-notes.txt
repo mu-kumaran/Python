@@ -1,7 +1,7 @@
 Dicitionary
 -----------
 - Unordered Key-Value pairs, mutable
-- Each key in Dicitionary is unique, while values can be repeated
+- Each key in Dictionary is unique, while values can be repeated
 - One can retrieve values when key is known
 - keys must be of immutable datatypes such as strings,numbers,tuples
 - pretty useful concept in python 
@@ -48,7 +48,7 @@ eg. example = {
 
 Updating elements:
 ------------------
-- we can either upadate the value or add a new key-value pair ot the collection
+- we can either update the value or add a new key-value pair ot the collection
 
 eg. names = {
     1:"Sam",
@@ -58,6 +58,7 @@ eg. names = {
     names[1] = "mano"
     names[2] = "sudhan"
     names[3] = "dinesh"
+    names.update({4:"manoj",5:"kumar"})
     print(names)
 
 Deleting elements:

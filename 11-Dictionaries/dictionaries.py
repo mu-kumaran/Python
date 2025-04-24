@@ -123,3 +123,31 @@ print(stud_profile[1001])
 print(stud_profile[1001]['name'])
 stud_profile[1001]['name'] = 'sudhan'
 print(stud_profile[1001])
+
+student = {
+    'manoj':{
+        'rno':1001,
+        'std':'2nd',
+        'grade':'A+',
+        'result':'pass'
+    },
+    'hari':{
+        'rno':1002,
+        'std':'3rd',
+        'grade':'A',
+        'result':'pass'
+    }
+}
+
+print(student)
+print(student.keys())
+print(student.values())
+print(student.items())
+
+del student['manoj']['result']
+
+print(student.get('manoj'))
+
+student.get('manoj').update({'result':'pass'})
+
+print(student.get('manoj'))

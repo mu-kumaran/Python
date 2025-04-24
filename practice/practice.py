@@ -1,35 +1,27 @@
-class employee:
-    def __init__(self,name,age,designation,salary):    
-        self.name = name
-        self.age = age
-        self.designation = designation
-        self.salary = salary
+student = {
+    'manoj':{
+        'rno':1001,
+        'std':'2nd',
+        'grade':'A+',
+        'result':'pass'
+    },
+    'sharmila':{
+        'rno':1002,
+        'std':'3rd',
+        'grade':'A',
+        'result':'pass'
+    }
+}
 
-    def getEmployeeDetails(self):
-        print(self.name)
-        print(self.age)
-        print(self.designation)
-        print(self.salary)
-        return (self.name,self.age,self.designation,self.salary)
-    
-    def updateSalary(self,newsalary):
-        self.salary = newsalary
-        print("salary updated")
-        return self.salary
-    
-class intern(employee):
-    def __init__(self, name, age, designation, salary,period):
-        self.period = period
-        super().__init__(name, age, designation, salary)
+print(student)
+print(student.keys())
+print(student.values())
+print(student.items())
 
-    def getInternDetails(self):
-        return self.name,self.age,self.designation,self.salary,self.period
+del student['manoj']['result']
 
-    def getInternPeriod(self):
-        return "Internship period is: "+str(self.period)+" months"
-emp1 = employee("john",35,"sr.developer",35000)
-intern1 = intern("manoj",28,"python intern",10000,6)
+print(student.get('manoj'))
 
-emp1.getEmployeeDetails()
-print(intern1.getInternDetails())
-print(intern1.getInternPeriod())
+print(student.get('manoj').update({'result':'pass'}))
+
+print(student.get('manoj'))
