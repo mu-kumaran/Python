@@ -127,7 +127,7 @@ eg. numbers = [23,56,78,13,98,33]
 
 Built-in methods:
 ----------------
--append(element): Adds the speciied element to the end of the list
+-append(element): Adds the specified element to the end of the list
 -insert(index,element): Inserts an element at the specified index
 -pop(): Removes and returns the last element from the list
 -remove(element): Removes specified element from the list

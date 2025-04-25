@@ -16,3 +16,5 @@ Project flow
 4. Return a Book
 - Depending on the choice entered, we would need to perform the operation and return the details to the output screen.
 - The above process has to be done repeatedly until the user quits.
+
+if __name__ == '__main__': is the entry point of the interpreter instead of top down apporach
