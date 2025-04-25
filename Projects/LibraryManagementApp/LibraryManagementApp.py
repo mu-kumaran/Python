@@ -12,6 +12,7 @@ class Library:
         for book in self.booksList:
             print(book)
         print(self.booksList)
+
     def addBook(self,book):
         if book in self.booksList:
             print("Book already exists")
@@ -79,10 +80,10 @@ def main():
 
 # Program execution will begin from here using the __name__ condition
 if __name__ == '__main__':
-    booksList = []
+    
     databaseName = input("Enter the name of the database file with extension:")
-    bookDatabase = open(databaseName,'r')
-    for book in bookDatabase:
-        booksList.append(book)
+    bookDBopen = open(databaseName,'r')
+    bookDatabase = bookDBopen.read()
+    booksList = bookDatabase.split("\n")
     library = Library(booksList,'PythonX')
     main() # Jump to main function to accept user input
