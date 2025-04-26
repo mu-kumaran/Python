@@ -122,7 +122,7 @@ Manipulating pointer
 --------------------
 tell() - tells you the current position of the pointer within the file
 
-seek(position,from) - The seek() method changes the current file position. The position argument indicates the number of bytes to be moved.    The 'from' argument (which is not mandatory to be mentioned) specifies the reference position from where the bytes are to be moved. 
+seek(position,from) - The seek() method changes the current file position of the pointer. The position argument indicates the number of bytes to be moved.    The 'from' argument (which is not mandatory to be mentioned) specifies the reference position from where the bytes are to be moved. 
 
 eg. # tell() method
     fp = open("D:/Software/Livewire_notes/Python/14-File-Handling/data.txt",'r')

@@ -1,1 +1,3 @@
-PythonX makes your python journey very easy.
+PythonX makes your python journey very easy
+Hello python users
+Python for datascience

@@ -19,8 +19,7 @@ class Library:
         else:
             self.booksList.append(book)
             bookDatabase = open(databaseName,'a')
-            bookDatabase.write('\n')
-            # Get to the newline in the text file
+            bookDatabase.write('\n') # Get to the newline in the text file
             bookDatabase.write(book)
             print('Book added')
 
