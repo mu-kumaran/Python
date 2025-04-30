@@ -148,6 +148,11 @@ String methods:
         print(str.capitalize())
         print(str.replace('P','A'))
 
+    eg. string = ",,,!!!hello!!!,,,"
+
+        stripped_string = string.strip(",!")
+        print(stripped_string) # Output: "hello"
+
 len() method:
 -------------
 - accepts the string as a parameter and returns the length of the string. It also counts all the whitespaces in the 
