@@ -74,6 +74,11 @@ eg. age = (18,67,45,18,35,23,18,22)
     print(age.count(18))
     print(age.index(45))
 
+    Creating sorted list from the tuple
+    -----------------------------------
+    age_order = sorted(age)
+    print(age_order)
+
 Advantages of tuples:
 ---------------------
 - Tuples generally used for heterogeneous data types and lists for homogeneous data types

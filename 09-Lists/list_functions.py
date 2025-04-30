@@ -15,6 +15,8 @@ names.insert(1,"Ron")
 print(names)
 names.remove('Nick')
 print(names)
+names.extend(['manoj','Vivek','Helen'])
+print(names)
 
 age = [18,67,45,18,35,23,18,22]
 print(age.count(18))
@@ -35,3 +37,7 @@ print(even1)
 str = "Hello, List"
 char_list = [x for x in str]
 print(char_list)
+
+# String to list conversion
+"Hard Rock".split() # output: ['Hard','Rock']
+"A,B,C,D,E".split(",") # output: ['A','B','C','D','E'] 

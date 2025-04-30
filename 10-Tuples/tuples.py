@@ -52,3 +52,8 @@ print(max(numbers))
 age = (18,67,45,18,35,23,18,22)
 print(age.count(18))
 print(age.index(45))
+
+# Creating sorted list from the tuple
+tup = (-5,7,3,2,-1)
+A = sorted(tup)
+print(A)

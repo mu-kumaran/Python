@@ -34,3 +34,15 @@ eurC = ['Ireland','Poland','Finland','France','Iceland','Spain']
 for country in eurC:
     if 'land' not in country:
         print(country)
+
+# List Aliasing
+A = [1,2,3,4,5]
+B = A
+B[0] = 9
+print(B)
+print(A)
+
+# List Cloning
+
+
+    
