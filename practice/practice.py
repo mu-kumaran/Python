@@ -1,4 +1,8 @@
-lst = ["abc",1,2,3,4]
-print(lst)
-lst.remove("abc")
+file = open("practice.txt",'r')
+print(type(file))
+print(file)
+new = file.read()
+print(new)
+print(type(new))
+lst = new.split("\n")
 print(lst)

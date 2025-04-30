@@ -18,12 +18,3 @@ Project flow
 - The above process has to be done repeatedly until the user quits.
 
 if __name__ == '__main__': is the entry point of the interpreter instead of top down apporach
-
-Further Enhancements: (Updating software)
------------------------------------------
-- Implement a database for the books borrowed - borrowed books list database
-- Implement a method that returns the record of the books that have been borrowed with the name of the person who has borrowed the book
-- Implement a new method to remove the books
-- So the project flow will be added with new menu options
-5. Display Books borrowed
-6. Remove a Book
