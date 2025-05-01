@@ -80,3 +80,20 @@ eg. str = "Goodmorning"
             break
     else:
         print("letter not found")  
+
+enumerate() function
+--------------------
+- gives bothx index and value of the iterable passed an argument
+
+eg. squares = ['red','blue','green','yellow','white']
+
+    for (index,value) in enumerate(squares):
+        print(index,value)
+
+    output:
+    ------
+    0 red
+    1 blue
+    2 green
+    3 yellow
+    4 white

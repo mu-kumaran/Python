@@ -100,6 +100,11 @@ eg. from functools import reduce
     sum = reduce(add,numbers)
     print(sum)
 
+Inbuilt functions:
+-------------------
+- are pre-defined functions that already built in python
+eg. sum(), round(), range(), len(), sorted() etc
+
 round():
 --------
 - used to round the float numbers to the required number of decimal places
@@ -121,3 +126,34 @@ range(start,end,steps)
 eg. even_numbers = list(range(2,10,2))
     odd_numbers = list(range(1,10,2))
     whole_numbers = list(range(10))
+
+Multiple Arguments:
+------------------
+- Multiple arguments passed will be in tuple form inside the function
+- When the number of arguments are unknown for a function, They can all be packed into a tuple 
+
+syntax:
+------
+def function_name(*args)
+    # body of the function
+
+eg. def names(*args):
+        for i in args:
+            print(i)
+        print(args)
+        print(type(args))
+        return args
+
+    name = names("xyz","abc","123")
+    print(name)
+
+- The arguments can also be packed into a dictionary.
+
+syntax :  def function_name(**args)
+------
+
+eg. def printDictionary(**args):
+    for key in args:
+        print(key + " : " + args[key])
+
+    printDictionary(Country='Canada',Province='Ontario',City='Toronto')

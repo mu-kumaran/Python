@@ -1,7 +1,30 @@
-A = [1,1,2,2,3,3,4,5,6]
-B = set(A) 
-print(B) # output: {1,2,3,4,5,6}
-B.add(7) # output: {1,2,3,4,5,7,6}
-B.add(1) # Here duplication is not allowed. So ame set result
-B.remove(4)
-print(sorted(B))
+squares = ['red','blue','green','yellow','white']
+
+for (index,value) in enumerate(squares):
+    print(index,value)
+
+
+def names(*args):
+    for i in args:
+        print(i)
+    print(args)
+    print(type(args))
+    return args
+name = names("xyz","abc","123")
+print(name)
+
+def printDictionary(**args):
+    for key in args:
+        print(key + " : " + args[key])
+
+printDictionary(Country='Canada',Province='Ontario',City='Toronto')
+
+def addItems(list):
+    list.append("Three")
+    list.append("Four")
+
+myList = ["One","Two"]
+
+addItems(myList)
+
+print(myList)

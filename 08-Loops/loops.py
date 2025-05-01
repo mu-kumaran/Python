@@ -51,3 +51,9 @@ for i in str:
         break
 else:
     print("letter not found")
+
+# enumerate() function
+squares = ['red','blue','green','yellow','white']
+
+for (index,value) in enumerate(squares):
+    print(index,value)

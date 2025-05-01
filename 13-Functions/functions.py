@@ -71,3 +71,36 @@ odd = list(range(1,10,2))
 print(odd)
 whole_nos = list(range(10))
 print(whole_nos)
+
+# sum() function
+lst = [1,4,5,8]
+print("Sum: ",sum(lst))
+
+# multiple arguments
+
+def names(*args):
+    for i in args:
+        print(i)
+    print(args)
+    print(type(args))
+    return args
+name = names("xyz","abc","123")
+print(name)
+
+def printDictionary(**args):
+    for key in args:
+        print(key + " : " + args[key])
+
+printDictionary(Country='Canada',Province='Ontario',City='Toronto')
+
+# changing the list items using functions
+
+def addItems(list):
+    list.append("Three")
+    list.append("Four")
+
+myList = ["One","Two"]
+
+addItems(myList)
+
+myList
