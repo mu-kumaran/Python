@@ -148,3 +148,18 @@ eg. file = open("practice.txt",'r+')
     print(file.readline(10))
     print("Pointer Position:",file.tell())
     file.close()
+
+To close file automatically:
+---------------------------
+syntax:
+-------
+with open("fileName",'mode-r/w/a') as var_name:
+    # body of the content
+
+eg. with open("practice.txt",'r') as file1:
+        file_stuff = file1.read()
+    
+    print(file1.closed)
+    print(file1.mode)
+    print(file1.name)
+    print(file_stuff)

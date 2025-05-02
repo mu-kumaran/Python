@@ -1,16 +1,8 @@
 
-a = 1
-
-try:
-    b = int(input("Please enter a number to divide a"))
-    a = a/b
-except ZeroDivisionError:
-    print("The number you provided cant divide 1 because it is 0")
-except ValueError:
-    print("You did not provide a number")
-except:
-    print("Something went wrong")
-else:
-    print("success a=",a)
-finally:
-    print("Processing Complete")
+with open("practice.txt",'r') as file1:
+    file_stuff = file1.read()
+    
+print(file1.closed)
+print(file1.mode)
+print(file1.name)
+print(file_stuff)
