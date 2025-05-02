@@ -1,30 +1,16 @@
-squares = ['red','blue','green','yellow','white']
 
-for (index,value) in enumerate(squares):
-    print(index,value)
+a = 1
 
-
-def names(*args):
-    for i in args:
-        print(i)
-    print(args)
-    print(type(args))
-    return args
-name = names("xyz","abc","123")
-print(name)
-
-def printDictionary(**args):
-    for key in args:
-        print(key + " : " + args[key])
-
-printDictionary(Country='Canada',Province='Ontario',City='Toronto')
-
-def addItems(list):
-    list.append("Three")
-    list.append("Four")
-
-myList = ["One","Two"]
-
-addItems(myList)
-
-print(myList)
+try:
+    b = int(input("Please enter a number to divide a"))
+    a = a/b
+except ZeroDivisionError:
+    print("The number you provided cant divide 1 because it is 0")
+except ValueError:
+    print("You did not provide a number")
+except:
+    print("Something went wrong")
+else:
+    print("success a=",a)
+finally:
+    print("Processing Complete")
