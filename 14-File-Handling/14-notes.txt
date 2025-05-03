@@ -169,3 +169,28 @@ eg. with open("practice.txt",'r') as file1:
         for line in file2:
                 print("Iteration", str(i), ": ", line)
                 i = i + 1
+
+Difference btn r+ and w+ mode:
+------------------------------
+- w+ mode overwrites the file completely. But r+ mode cannot. For that we use truncate() method to delete the remaining portion after writing file.
+
+eg. with open("practice.txt",'r+') as file1:
+    file1.seek(0,0)
+    print("File cursor position:",file1.tell())
+    file1.write("Line 1"+"\n")
+    file1.write("Line 2"+"\n")
+    file1.write("Line 3"+"\n")
+    file1.write("Line 4"+"\n")
+    file1.write("Finished")
+    file1.truncate()
+    file1.seek(0,0)
+    print(file1.read())
+
+Copy a file:
+============
+- Let's copy the file Example2.txt to the file Example3.txt:
+
+eg. with open('/Example2.txt','r') as readfile:
+        with open('/Example3.txt','w') as writefile:
+            for line in readfile:
+                    writefile.write(line)

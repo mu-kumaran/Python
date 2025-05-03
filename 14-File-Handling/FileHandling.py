@@ -28,6 +28,7 @@ fp = open("D:/Software/Livewire_notes/Python/14-File-Handling/data.txt",'r')
 print("Pointer position before reading:",fp.tell())
 fp.read()
 print("Pointer position after reading:",fp.tell())
+fp.close()
 
 # seek() method
 fp = open("D:/Software/Livewire_notes/Python/14-File-Handling/data.txt",'r')
