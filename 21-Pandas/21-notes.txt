@@ -1,0 +1,123 @@
+Pandas library
+==============
+- Dependencies or libraries are pre-written code to help solve problems.
+- We can import the library or a dependency like pandas using the following command.
+import pandas 
+import pandas as pd
+
+Importing .CSV file
+--------------------
+CSV - Comma Separated Values
+syntax:
+-------
+df = pandas.read_csv("file_path")
+
+note: In above syntax variable name can be anything. we use 'df' to refer dataframes
+
+eg. import pandas as pd
+    csv_path = "file.csv"
+    df = pd.read_csv(csv_path)
+    df.head()
+
+- we used head() method to show first five rows of dataframe
+
+Importing excel (.xlsx) files
+-----------------------------
+- same as importing csv files
+
+syntax: 
+-------
+df = pandas.read_excel("file_path")
+
+eg. import pandas as pd
+    excel_path = "file2.xlsx"
+    df = pd.read_excel(excel_path)
+    df.head()
+
+Creating dataframes:
+--------------------
+- A dataframe is comprised of rows and columns. 
+- We can create a data frame out of a dictionary. The keys correspond to the column labels. The values are lists corresponding to the rows. 
+- We then cast the dictionary to a dataframe using the function DataFrame. 
+- We can see the direct correspondence between the table. The keys correspond to the table headers. The values are lists corresponding to the rows.
+
+syntax:
+-------
+df = pd.DataFrame(dictionary)
+
+eg. songs = {
+    'Artist':['MJ','Pink Floyd','Meat Loaf','AC/DC','Eagels']
+    'Album':['Thriller','Back in Black','Darkside of the Moon','The BodyGuard','Bat Out of Hell'],
+    'Released':[1982,1980,1973,1992,1977],
+    'Genre':['Pop','Rock','Metal','Light','Disco']
+    'Length':['10 mins','20 mins','5 mins','8 mins','12 mins']
+    }
+
+    df2 = pd.DataFrame(songs)
+    # print(df2)
+    print(df2.head())
+
+- To create a new dataframe from the existing dataframe we use 
+eg. x = df2[['Length']]
+    y = df2[['Artist','Genre','Length']]
+
+    print(x,"\n",y)
+
+Note: df[['Length']] returns a dataframe and df['Length'] returns a series
+
+Accessing dataframes
+---------------------
+- One way to access unique elements is the iloc and loc method. (note: ix method removed in new version)
+
+eg. a = df2.iloc[0,1]
+    b= df2.iloc[1,2]
+    c = df2.loc[0,'Artist']
+    d = df2.loc[2,'Album']
+    print(a,b,c,d)
+
+slicing dataframes:
+-------------------
+eg. s = df2.iloc[0:2,0:3]
+    print(s)
+    t = df2.loc[0:3,'Album':'Genre']
+    print(t)
+
+- we can use unique() method to find unique elements in dataframes
+
+eg. d = df['Period'].unique()
+    print(d)
+
+Using conditional operators to list out elements
+-------------------------------------------------
+ Eg.s1 = df2['Released']>=1980   -->returns a bool value True or False
+    print(s1)
+
+    df3 = df2[df2['Released']>=1980]   --> creates a separate dataframe for the condition
+    print(df3)
+
+Export to CSV file and other files
+----------------------------------
+syntax: 
+-------
+df.to_csv("filename.csv")
+df.to_excel("filename.xlsx")
+
+eg. df3.to_csv('new_songs.csv')
+    df4 = pd.read_csv('new_songs.csv')
+    print(df4)
+
+To change the index of the dataframe:
+-------------------------------------
+- use index attribute to change the index of the dataframe
+
+eg. import pandas as pd
+
+    df = pd.read_excel("sales.xlsx")
+    print(df)
+
+    new_index = ['a','b','c','d','e']
+
+    df.index = new_index
+
+    print(df)
+
