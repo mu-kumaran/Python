@@ -1,3 +1,6 @@
+f = list(range(5))
+print (f)
 
-for i in range(5):
-    print(i)
+f.clear()
+print(f)
+print(type(f))

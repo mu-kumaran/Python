@@ -2,7 +2,7 @@
 Task:
 =====
 Your local university's Raptors fan club maintains a register of its active members on a .txt document. Every month they update the file by removing the members who are not active. You have been tasked with automating this with your Python skills.
-Given the file currentMem, Remove each member with a 'no' in their Active column. Keep track of each of the removed members and append them to the exMem file. Make sure that the format of the original files in preserved. (Hint: Do this by reading/writing whole lines and ensuring the header remains )
+Given the file currentMem, Remove each member with a 'no' in their Active column. Keep track of each of the removed members and append them to the exMem file. Make sure that the format of the original files in preserved. (Hint: Do this by reading/writing whole lines and ensuring the header remains ). Write the test function for the program
 """
 '''
 The two arguments for the updateFile() function are the files:
@@ -44,26 +44,41 @@ def genFile(currentMem,exMem):
 def updateFile(currentMem,exMem):
     with open(currentMem,"r+") as file1:
         rdfile = file1.read().split("\n")
-        rdfile.pop(0)
-        length = len(rdfile)
+        rdfile.pop(0) # removing header content from the list
    
    # Updating ex-member file 
-    with open(exMem,'a+') as file2:
-        file2.write("\n")
-        for i in range(0,length):
+    writeFile = []
+    for i in range(0,len(rdfile)):
             if "Yes" in rdfile[i]:
                 continue
             else:
-                file2.write(rdfile[i]+"\n")
-    
+                writeFile.append(rdfile[i])
+
+    with open(exMem,'a+') as file2:
+        file2.write("\n")
+        for i in range(0,len(writeFile)):
+            if i==(len(writeFile)-1):
+                file2.write(writeFile[i])
+            else:
+                file2.write(writeFile[i]+"\n")
+
     # Updating current member file
-    with open(currentMem,"w+") as file3:
-        file3.write(header)
-        for i in range(0,length):
+    writeFile.clear()
+    for i in range(0,len(rdfile)):
             if "No" in rdfile[i]:
                 continue
             else:
-                file3.write(rdfile[i]+"\n")
+                writeFile.append(rdfile[i])
+
+    with open(currentMem,"w+") as file3:
+        file3.write(header)
+        for i in range(0,len(writeFile)):
+            if i==(len(writeFile)-1):
+                file3.write(writeFile[i])
+            else:
+                file3.write(writeFile[i]+"\n")
+    del writeFile
+
 # test function for the program
 def test(passed):
     print("Test Condition: \n")
@@ -87,16 +102,15 @@ def testCase(testCurrent,testEx):
         updateFile(testCurrent,testEx)
         with open(testCurrent,'r') as file:
             t2_current = file.read().split("\n")
-            t2_current.pop()
         with open(testEx,'r') as file:
             t2_ex = file.read().split("\n")
-            t2_current.pop()
 
         # check conditions
         # checking whether no of rows equal
         if ((len(t1_current)+len(t1_ex)) != (len(t2_current)+len(t2_ex))):
             print("Total no of rows in current and ex members files do not match with original files.")
             passed = False
+
         # checking updated file with original file
         for line in t2_current:
             if "No" in line:
@@ -132,5 +146,3 @@ if __name__ == "__main__":
     testCurrent = "testCurrent.txt"
     testEx = "testEx.txt"
     testCase(testCurrent,testEx)
-
-    
