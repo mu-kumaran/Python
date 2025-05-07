@@ -1,0 +1,37 @@
+Numpy Library:
+=============
+- Numpy is a library for scientific computing. It has many useful functions. 
+- There are many other advantages like speed and memory. 
+- Numpy is also the basis for pandas
+
+Objectives
+----------
+1. The Basics and Array Creation
+2. Indexing and Slicing 
+3. Basic Operations 
+4. Universal Functions
+
+The Basics and Array Creation:
+------------------------------
+- A "numpy" array or "ndarray" is similar to a list. It's usually fixed in size and each element is of the same type
+- We can cast a list to a numpy array
+
+eg. import numpy as np
+    a = np.array([1,2,3,4])
+    b = np.array([1.1,2.64,3.92,210.56])
+    print(a)
+    print(type(a))
+    print(a.dtype)
+    print(a.ndim)
+    print(a.shape)
+    print(type(b))
+    print(b.dtype)
+
+Attributes: 
+-----------
+dtype - datatype of the array
+ndim - no of dimensions of the array
+shape - gives tuple of matrix dimensions
+
+Indexing and Slicing:
+---------------------
