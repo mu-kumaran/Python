@@ -16,7 +16,7 @@ The two arguments for the updateFile() function are the files:
 from random import randint as rand
 
 mem_status = ("Yes","No")
-mem_format = "{:^13} {:^11} {:^10}"
+mem_format = "{:^13} {:<11} {:^10}"
 header = mem_format.format("Membership no","Date Joined","Active?")+"\n"
 
 # Generating member file using random function
