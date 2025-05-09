@@ -22,6 +22,18 @@ print(d)
 c[3:5] = 300,400
 print(c)
 
+x = np.array(list(range(1,11)))
+print(x)
+
+index = [2,4,6,8]
+print(index)
+
+y = x[index]
+print(y)
+
+x[index] = 100
+print(x)
+
 # Basic operations
 # Vector addition and subtraction
 # Through list operations

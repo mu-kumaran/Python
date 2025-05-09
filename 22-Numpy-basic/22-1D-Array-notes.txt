@@ -27,11 +27,16 @@ eg. import numpy as np
     print(type(b))
     print(b.dtype)
 
+- To get the length and size of the array
+eg. print(len(a))
+    print(a.size)
+
 Attributes: 
 -----------
 dtype - datatype of the array
 ndim - no of dimensions of the array
 shape - gives tuple of matrix dimensions
+size - gives the size of the array
 
 2. Indexing and Slicing:
 ---------------------
@@ -45,6 +50,20 @@ shape - gives tuple of matrix dimensions
     print(d)
     c[3:5] = 300,400
     print(c)
+
+- we can use a list to select more than one specific index.
+
+eg. x = np.array(list(range(1,11)))
+    print(x)
+
+    index = [2,4,6,8]
+    print(index)
+
+    y = x[index]
+    print(y)
+
+    x[index] = 100
+    print(x)
 
 3. Basic Operations
 -------------------
@@ -69,8 +88,8 @@ eg. u = [1,0]
 
 eg. u = np.array([0,1])
     v = np.array([1,0])
-    z = u+v
-    j = u-v
+    z = u+v (or) z = np.add(u,v)
+    j = u-v (or) j = np.subtract(u,v)
     print(z,j)
 
 Array multiplication with scalar
@@ -99,7 +118,7 @@ eg. x = [1,2]
     y = [3,2]
     u = np.array(x)
     v = np.array(y)
-    z = u*v
+    z = u*v (or) z = np.multiply(u,v)
     print(z)
 
     l= []
@@ -149,6 +168,31 @@ u = np.array([1,2,3,5])
 z = u.max()
 
 print(z)
+
+standard deviation: std()
+-------------------------
+u = np.array([1,2,3,5])
+std_dev = u.std()
+
+add()
+-----
+eg. x = [1,2]
+    y = [3,2]
+    u = np.array(x)
+    v = np.array(y)
+    sum  = np.add(u,v)
+
+subtract()
+----------
+eg. sub = np.subtract(u,v)
+
+multiply (Hadamard product)
+---------------------------
+eg. mult = np.multiply(u,v)
+
+divide()
+--------
+eg. div = np.divide(u,v)
 
 - We can use numpy to create functions that map numpy arrays to new numpy arrays
 

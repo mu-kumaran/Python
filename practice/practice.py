@@ -1,12 +1,30 @@
 import numpy as np
-import matplotlib.pyplot as plt
+a = [[1,2],[3,4]]
+b = [[5,6],[7,8]]
+x = np.array(a)
+y = np.array(b)
 
-x = np.linspace(0,2*np.pi,num=100)
-y = np.sin(x)
+z = x+y
+z_sub = x-y
+print(z)
+print(z_sub)
 
-# %matplotlib inline
-plt.plot(x,y)
-plt.title("Sin(x) function")
-plt.xlabel("X")
-plt.ylabel("Sin(X)")
-plt.show()
+z_prod = x*y
+print(z_prod)
+
+z_mult = np.dot(x,y)
+print(z_mult)
+
+z1 = 2*x
+z2 = 5*y
+print(z1)
+print(z2)
+
+A = np.array([[1,2,3],[4,5,6]])
+ATrans = A.T
+print(A)
+print(A.shape)
+print(ATrans)
+print(ATrans.shape)
+
+
