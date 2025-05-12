@@ -1,16 +1,7 @@
-dic = {
-    1: "a",
-    2: "b",
-    3: "c"
-}
+lst = [x for x in range(6)]
+print(lst)
+lst1 = [x for x in range(1,7) if x%2 == 0]
+print(lst1)
 
-for key,value in dic.items():
-    print(key,value)
-
-for i in dic.keys():
-    print(i)
-
-for j in dic.get():
-    pass
-
-
+lst1  = ['a','b','c','d','e']
+lst = [1,2,3,4,5]

@@ -121,7 +121,7 @@ eg. empData = {
     102: "Asten",
     103: "Kerry"
     }
-    for i in empData:
+    for i in empData.keys():
         print(i)        # returns keys
 
     for i in empData.values():
