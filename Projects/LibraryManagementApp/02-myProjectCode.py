@@ -7,13 +7,18 @@ class Library:
     
     def displayBooks(self):
         print("Books in the library:")
+        print("--------------------")
         for i in self.bookslist:
             print(i)
 
     def displayBooksBorrowed(self):
         print("Books Borrowed from library:")
-        for (i,j) in self.booksBorrowed.items():
-            print(i,": lended by ",j)
+        print("---------------------------")
+        if(not self.booksBorrowed):
+            print("No books have been borrowed yet")
+        else:
+            for (i,j) in self.booksBorrowed.items():
+                print(i,": lended by ",j)
 
     def addBooks(self):
         book = input("Enter the book name to add in the library: ")
@@ -63,22 +68,57 @@ class Library:
         else:
             print("Book cannot be returned")
 
-if __name__ == "__main__":
-    booksDBase = input("Enter the books database filename: ")
-    booksDB = open(booksDBase,'r')
-    books = booksDB.read()
-    bookslist = books.split("\n")
+def main():
+    print("Welcome to the Library: ")
+    print("----------------------")
+    while(True):
+        print("""
+                Options:
+                -------- 
+                1. Display books in the library
+                2. Display books borrowed from library
+                3. Add Books in the Library
+                4. Remove Books in the Library
+                5. Lend Book
+                6. Return Book
+                7. Exit
+        """)
+        try:
+            option = int(input("Enter the option number:"))
+            if(option == 1):
+                lib.displayBooks()
+            elif(option == 2):
+                lib.displayBooksBorrowed()
+            elif(option == 3):
+                lib.addBooks()
+            elif(option == 4):
+                lib.removeBooks()
+            elif(option == 5):
+                lib.lendBooks()
+            elif(option == 6):
+                lib.returnBooks()
+            elif(option == 7):
+                break
+            else:
+                print("Wrong option. Try again")
+        except Exception as err:
+            print("Typo Error:",err)
+            print("Enter correct option")
+            
 
-    lib = Library(bookslist)
-    lib.displayBooks()
-    # lib.addBooks()
-    # lib.displayBooks()
-    # lib.removeBooks()
-    # lib.displayBooks()
-    # lib.displayBooksBorrowed()
-    lib.lendBooks()
-    lib.displayBooksBorrowed()
-    lib.returnBooks()
-    lib.displayBooksBorrowed()
-    pass
+
+if __name__ == "__main__":
+    while(True):
+        booksDBase = input("Enter the books database filename: ")
+        try:
+            booksDB = open(booksDBase,'r')
+            books = booksDB.read()      # returns a string datatype
+            bookslist = books.split("\n")   # string datatype converted in to list
+            lib = Library(bookslist)
+            break
+        except Exception as err:
+            print("Error: ",err)
+            print("Enter the correct filename")
+
+    main()
 

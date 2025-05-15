@@ -1,5 +1,6 @@
 Python Crash Course
 Head First Python
-Learn Python3 - The Hard Way
 Python for dummies
 Think Python
+Eat Frog
+The Scientific Python

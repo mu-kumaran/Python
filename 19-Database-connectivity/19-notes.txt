@@ -1,0 +1,13 @@
+Data and Databases:
+------------------
+
+Data:
+----
+- Modern applications create a lot of data.
+- Data is a raw information that has been collected or created and it can be of any type such as numeric, words, digital and more.
+- All these data have to be stored and processed in such a way that one can access them anytime. This data is stored in a database.
+
+Database:
+---------
+- A database is a systematic collection of data or in simple words, it is an organized collection of data.
+- It is a collection of information that is organized so that it can easily be accessed, managed and updated.
