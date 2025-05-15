@@ -10,4 +10,110 @@ Data:
 Database:
 ---------
 - A database is a systematic collection of data or in simple words, it is an organized collection of data.
-- It is a collection of information that is organized so that it can easily be accessed, managed and updated.
+- It is a collection of information that is organized so that it can easily be accessed, managed and updated. A data can be stored ,accessed and manipulated in databases.
+- Databases play a major role in the development of an application.
+
+Relational Database:
+-------------------
+- We can categorize database into various categories based on how they store and process data. One of the common types is Relational database.
+- A relational database stores the data in the form of tables - a collection of rows and columns like a spreadsheet
+
+RDBMS
+-----
+- called Relational Database Management System. ( a popular DBMS in the industry)
+- a collection of programs that enables the users to access databases, manipulate data, report and represent data and also control access to the database.
+- To work with RDBMS, we use something called SQL.
+- SQL is the standard language for relational database systems.
+
+SQL
+---
+- Structured Query Language is the standard programming language for relational databases.
+- Using SQL, you can query, update, and reorganize data, as well as create and modify the schema(structure) of a database system and control access to its data.
+- There are different versions of the SQL language. Some of the examples are MySQL, MS Access, Oracle, Sybase, Informix, Postgres, SQL server and more of which depend on SQL and use it as the base. 
+- We MySQL here to work with python
+
+MySQL
+----
+- It is a freely available open-source RDBMS that uses SQL.
+- It is one of the best RDBMS being used for developing various web-based software applications.
+- It is compatible with all the major operating systems and works pretty well with major programming languages such as Java, Python, PHP, C++ and more.
+
+Basic Terminologies
+-------------------
+- Data in an RDBMS is stored in database objects which are called tables
+- This table is basically a collection of related data entries and it consists of numerous columns and rows. Following are related terminologies.
+
+1. Field - Every table is broken up into smaller entities called Fields.
+2. Record - A record, also called a row of data, is each individual entry that exists in a table.
+3. Column - A column is a vertical entity in a table that contains all information associated with a specific field in a table.
+4. NULL value - A NULL value in a table is a value in a field that appears to be blank, which means a field with a NULL value is a field with no value.
+5. Primary Key - A primary key helps us to uniquely identify a row in the table. A key value can not occur twice in the table.
+6. Foreign Key - A foreign key acts like a link between two tables.
+
+MySQL installation
+------------------
+- MySQL installer is the easy way to install MySQL on windows
+- MySQL installer helps to install MySQL with following components
+1. MySQL Server
+2. All Available Connectors
+3. MySQL Workbench with Sample Data Models
+4. MySQL Notifier
+5. Tools for Excel and Microsoft Visual Studio
+6. MySQL Sample Databases
+7. MySQL Documentation
+
+Website : https://dev.mysql.com/downloads/installer/
+- Download and run the executable installer file
+- choose the full option to install all MySQL products
+- MySQL Installer downloads all selected products
+- You need to choose a password for the root account
+- Keep your root password safely in your PC or anywhere else
+- After MySQL installation has been done successfully, search MySQL Command Line Client on the Windows search bar and open it. It will ask for your root password.
+- Once the password accessed, you are into the MySQL shell and the installation was successful.
+
+Data Types in MySQL:
+-------------------
+INT - It is a normal-sized integer. We can specify a width of upto 11 digits. It requires 4 bytes for storage.
+FLOAT(m,d) - It is a floating-point number. You can define the display length (m) and the number of decimals (d). This is not required and will default to 10,2 where 2 is the number of decimals, and 10 is the total number of digits (including decimals).
+BOOL - It is used only for true and false conditions. It considers numeric value 1 as true and 0 as false
+CHAR(size) - It can have a maximum size of 255 characters. Here size is the number of characters to store.
+VARCHAR(size) - It can have a maximum size of 255 characters. Here size is the number of characters to store. Variable-length string.
+
+Creating a database in MySQL:
+-----------------------------
+syntax:
+-------
+CREATE DATABASE database_name;
+
+- database_name is the name of a new database that should be unique in the MySQL
+- Also, every statement in MySQL should terminate with a semicolon
+
+- Now open up your command-line client and enter your password to access the MySQL shell
+- Once you are into the shell, hit the below command to create a database named 'pythonx'
+
+CREATE DATABASE pythonx;
+
+output: Query OK, 1 row affected
+
+- If you get the above output, this means your database has been successfully created.
+
+- To show a database list: SHOW DATABASES; 
+
+output:
+------
+information_schema
+mysql
+performance_schema
+test
+pythonx
+
+- To use a particular database: USE database_name;
+eg. USE pythonx
+output: Database changed
+
+- To delete a database completely: DROP DATABASE database_name;
+eg. DROP DATABASE pythonx;
+output: Query OK, 0 rows affected (0.02 sec)
+
+- To clear command line - system cls
+- To get out from wrong command line: ctrl+c
