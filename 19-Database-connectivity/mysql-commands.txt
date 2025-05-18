@@ -1,0 +1,5 @@
+Database:
+--------
+CREATE DATABASE db_name;
+SHOW DATABASES;
+DROP DATABASE db_name;

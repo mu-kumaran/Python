@@ -1,0 +1,43 @@
+MySQL connection:
+----------------
+- To interact with database via our application, we need to connect our application with the database.
+- To connect MySQL with python we use MySQL connector.
+- MySQL connector is a driver for connecting to a MySQL database server through the Open Database Connectivity (ODBC) application program interface (API), which is the standard means of connecting to any database.
+- MySQL provides various database connectors. Since we want to work with Python, we will use the Python Driver for MySQL which is a Python connector.
+
+mysql.connector
+---------------
+- We connect our Python application with the MySQL database using a Python module named mysql.connector
+- It is a third-party module that allows us to interact with the MySQL database.
+- Since it is not a built-in-module, we will need to install it before using it.
+ 
+ command: pip install mysql-connector
+ -------
+
+ Creating connection:
+ -------------------
+Step - 1: Import the library
+--------
+- Import the mysql.connector module in your Python script.
+ 
+ code: 
+ ----
+ import mysql.connector
+
+ Step - 2: Establish a connection
+ ---------
+- Use the mysql.connector.connect() method to connect to the MySQL server.
+- Provide the necessary credentials such as host, user, password, and database (if you want to connect to a specific database).
+
+code:
+-----
+mydb = mysql.connector.connect(
+        host="your_host_name",
+        user="your_username",
+        password="your_password",
+        database="your_database"
+    )
+
+Here,
+- mydb is the database variable that we create to make the connection. We will use this object for further database interaction.
+- mysql.connector.connect() is how we make the call to the connect() method

@@ -107,13 +107,96 @@ performance_schema
 test
 pythonx
 
+Using Database:
+---------------
 - To use a particular database: USE database_name;
 eg. USE pythonx
 output: Database changed
 
+Deleting Database:
+-----------------
 - To delete a database completely: DROP DATABASE database_name;
 eg. DROP DATABASE pythonx;
 output: Query OK, 0 rows affected (0.02 sec)
 
 - To clear command line - system cls
 - To get out from wrong command line: ctrl+c
+
+Creating Tables:
+---------------
+syntax:
+-------
+CREATE TABLE table_name(col_name1 data_type,col_name2 data_type,....);
+
+Here,
+- As we know, CREATE TABLE is the command used to create a table in MySQL
+- table_name is the name given to the table
+- The elements of the table are defined in the paranthesis. col_name1 data_type is the column definition, where data_type is the column definition, where data_type defines the type of data that will be stored in the column
+
+Eg. Let's create a user table in our 'pythonx' database with the following constraints,
+- userId
+- username
+- email
+- userType
+
+- Here, we will make the constraint userId as the PRIMARY KEY. The PRIMARY KEY constraint uniquely identifies each record in the table.
+- Primary keys must contain NULL values. Also, a table can have only one PRIMARY KEY,
+
+CREATE TABLE user(userId int PRIMARY KEY, username varchar(10), email varchar(25), userType varchar(10));
+
+Viewing tables:
+---------------
+To view tables in db: SHOW TABLES;
+
+Deleting tables:
+----------------
+To delete a table in db: DROP TABLE table_name;
+
+Fetching Data from the table:
+----------------------------
+- we can fetch the data from the table using SELECT command.
+- The SELECT command is used to fetch data from one or more tables. There are different ways of using the SELECT command.
+- Following is the most generic syntax of SELECT command
+
+syntax:
+-------
+SELECT fieldName1,fieldName2,....fieldNameN
+FROM tableName1,tableName2...
+[WHERE condition]
+[GROUP BY field_name(s)]
+[HAVING condition]
+[ORDER BY field_name(s)];
+
+Here,
+SELECT fieldName1,fieldName2,....fieldNameN
+FROM tableName1,tableName2...
+is the mandatory part of the SELECT command. All other constraints are optional and are used to manipulate and filter the records according to the given condition.
+
+To fetch the whole data from the table we use,
+SELECT* FROM tableName;
+
+Inserting data into the table:
+-----------------------------
+- We can use the INSERT statement to store or add data in the MySQL table within the database.
+
+Syntax:
+-------
+INSERT INTO table_name VALUES(fieldName1,fieldName2,....fieldNameN)
+
+eg.
+INSERT INTO user VALUES(1526,"John","john@example.com","PRO");
+INSERT INTO user VALUES(6745,"Smith","Smith@example.com","REGULAR");
+
+output: Query OK, 1 row affected
+
+eg. now fetching all data from table: SELECT * FROM user;
+Fetching particular data from the table: SELECT userId,userType from user;
+
+Filtering results using WHERE clause:
+-------------------------------------
+syntax:
+-------
+WHERE some_condition;
+
+eg. 
+SELECT * FROM user WHERE userType = "PRO";
