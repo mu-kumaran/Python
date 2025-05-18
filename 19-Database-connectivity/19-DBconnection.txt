@@ -11,7 +11,7 @@ mysql.connector
 - It is a third-party module that allows us to interact with the MySQL database.
 - Since it is not a built-in-module, we will need to install it before using it.
  
- command: pip install mysql-connector
+ command: pip install mysql-connector-python
  -------
 
  Creating connection:
@@ -34,10 +34,24 @@ code:
 mydb = mysql.connector.connect(
         host="your_host_name",
         user="your_username",
-        password="your_password",
+        password="your_password",   //passwd = "password"
         database="your_database"
     )
 
 Here,
 - mydb is the database variable that we create to make the connection. We will use this object for further database interaction.
-- mysql.connector.connect() is how we make the call to the connect() method
+- mysql.connector.connect() is how we make the call to the connect() method.
+- It takes three or four parameters to create a database connection. The first one is the name of the host or the host machine. Next are username and the password of our MySQL that you might have set while installing MySQL in your systems and database if you want to connect to specific database.
+
+eg. import mysql.connector
+    myDB = mysql.connector.connect(
+        host = "localhost",
+        user="root",
+        password = "hWsjr8+i#"
+    )
+
+    print(myDB)
+
+output: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000129CC6FDA90>
+
+- since we are using MySQL in local machine, hostname will be localhost. In most of the cases default username is root. Password is our MySQL password entered while installing it. 
