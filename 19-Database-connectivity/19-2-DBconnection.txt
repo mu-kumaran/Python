@@ -34,7 +34,7 @@ code:
 mydb = mysql.connector.connect(
         host="your_host_name",
         user="your_username",
-        password="your_password",   //passwd = "password"
+        password="your_password",
         database="your_database"
     )
 
