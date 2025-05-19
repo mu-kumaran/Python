@@ -40,3 +40,27 @@ cur = myDB.cursor()
 cur.execute("CREATE TABLE user(userId int PRIMARY KEY, username varchar(10), email varchar(25), userType varchar(10))") 
 myDB.close() 
 
+Inserting and fetching data in the tables:
+------------------------------------------
+- we use INSERT and SELECT commands to insert and fetch data in the database
+- we use commit() method to get the data be saved and reflected in the database
+- we use fetchall() method to fetch all rows from the table and get stored in the tuple
+
+eg.
+
+cur = myDB.cursor()
+cur.execute('INSERT INTO user VALUES(1526,"John","john@example.com","PRO")') 
+cur.execute('INSERT INTO user VALUES(6745,"Smith","Smith@example.com","REGULAR")') 
+myDB.commit()  # to make data to be saved and get reflected in the database
+cur.execute("SELECT * FROM user")
+result = cur.fetchall()
+for i in result:
+    print(i)
+myDB.close() 
+
+Some more methods:
+------------------
+1. fetchone() - It fetches the next row of a query result set. A result set is an object that is returned when a cursor object is used to query a table.
+2. fetchall() - It fetches all the rows in a result set. If some rows have already been extracted from the result set, then it retrieves the remaining rows from the result set. It returns each row as an individual tuple.
+3. executemany() - It works just like execute(), but it is used to execute multiple database queries at a single time. It accepts a list of queries. We can pass a list that can contain the tuple elements of multiple data values that need to be inserted in a table.
+
