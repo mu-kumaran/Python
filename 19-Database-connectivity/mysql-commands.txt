@@ -4,3 +4,14 @@ CREATE DATABASE db_name;
 SHOW DATABASES;
 DROP DATABASE db_name;
 USE db_name;
+
+Tables:
+-------
+CREATE TABLE table_name(col_name1 data_type,col_name2 data_type,....);
+SHOW TABLES;
+DROP TABLE table_name;
+INSERT INTO table_name VALUES(fieldName1,fieldName2,....fieldNameN)
+SELECT fieldName1,fieldName2,....fieldNameN
+FROM tableName1,tableName2...
+[WHERE condition]
+SELECT* FROM tableName;
