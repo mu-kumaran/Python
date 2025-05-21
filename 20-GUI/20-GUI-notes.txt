@@ -1,0 +1,198 @@
+GUI (Graphical User Interface)
+-----------------------------
+
+What is GUI?
+------------
+- GUI stands for Graphical User Interface which is a interactive visual component of the computer.
+- User interface is thing which allows to interact with computer
+- Command line interface allows us to interact with computer through terminal or shell commands. eg. MS-DOS, Windows command line prompt or windows shell etc
+- Where GUI allows us to interact with computer through graphics such as menus,buttons,mouse cursor,images,icons and more. GUI for many programs differs with layout.
+- GUI development means Desktop application development.
+- Python provides many libraries for GUI development such as Tkinter, Kivy, Python Qt, wxPython etc
+
+Tkinter library
+---------------
+- It is an in-built python module that is used to create GUI applications. It is one of the most commonly used modules.
+- It gives an object-oriented interface to the Tk GUI toolkit.
+- Python IDLE - an default IDE for python is fully coded in Tkinter.
+- Since TKinter is the inbuilt module we don't want to install it. We can directly import and start using it.
+
+How to import it?
+-----------------
+import tkinter
+
+Steps to create GUI app using Tkinter in python:
+------------------------------------------------
+1. Importing the module - Tkinter
+2. Create the main window
+3. Add any number of widgets to the main window
+4. Apply the event Trigger on the widgets
+
+Widgets
+-------
+- Widgets are the elements of GUI applications that provide various controls such as Labels,Buttons,ComboBoxes,CheckBoxes,MenuBars,RadioButtons and many more to users to interact with the application.
+- In Tkinter. Widgets are represented as objects, that is, instances of classes that represent them such as the Button class for the button widget, Frame class for the frame widget and so on.
+- So each separate widget is a Python object. When creating a widget, you must pass its parent (the parent container that will hold the widget) as the parameter to the widget creation function. 
+
+Widget classes
+--------------
+Label - It is used to provide a single-line caption for other widgets. In simple words, It is used to display text and can also contain images.
+Button - It is used to add buttons to your application. These button can perform various actions when clicked.
+Entry - It is just like the Python input() function, but more GUI in nature. It is used to accept single-line input from the user
+Text - It is a text entry widget that allows multiline text entry
+Frame - It is used as a container widget to organize other widgets
+ComboBox - It contains a down arrow to select from the list of available options. It is just like a dropdown list.
+Checkbutton - It is used to display a number of options as radio buttons. The user can select only one option at a time.
+PanedWindow - It is a container widget that may contain any number of panes, arranged horizontally or vertically
+Canvas - It is used to draw shapes, such as lines, ovals, polygons, and rectangles, in your application.
+tkMessageBox - Well, it's not a widget but a complete Python module. It is used to display message(dialog) boxes in our applications.
+
+Creating a window in Tkinter
+----------------------------
+code:
+-----
+from tkinter import*
+window = Tk()
+window.mainloop()
+
+Explanation:
+------------
+- We are using the import syntax to import the tkinter module
+- We have a created a root window by calling Tk(). This automatically creates a graphical window with the title bar, minimize, maximize and close buttons.
+- Here 'window' is the object of class Tk() and allows us to put the contents in the window and reconfigure it as necessary.
+- The application window does not appear before you enter the main loop. This method tells python to take all the widgets and objects we created, render them on our screen, and respond to any interactions.
+- The program stays in the loop until we close the window.
+
+GUI - Geometry Management
+-------------------------
+- The layout of the application in Tkinter is controlled by the Geometry Managers. It helps us to place and organize various widgets in the window.
+- Therefore to display it, we need to call a special geometry management method.
+- All Tkinter widgets have access to specific geometry management methods, which have the purpose of organizing widgets throughout the parent widget area.
+- Folowing are the three methods provided by Tkinter for the same,
+    1. pack()
+    2. grid()
+    3. place()
+
+pack() method
+-------------
+- The pack geometry manager organizes widgets in blocks before placing them in the parent widget. It places the widgets in the given order as they are created.
+
+How it works?
+-------------
+- It computes a rectangular area called a parcel that's just tall and wide enough to hold the widget and fills the remaining area in the window with blank space.
+- It centers the widget in the parcel unless a different location is specified.
+
+syntax: widget.pack(pack_options)
+-------
+pack_options (parameters)
+--------------------------------
+expand - It takes a boolean value. When set to true, the widget expands to fill any space in the widget's parent
+fill - It determines whether the widget fills any extra space allocated to it by the packer, or keeps its own minimal dimensions. It can have the folowing values: NONE(Default), X(fill only horizontally), Y(fill only vertically), or BOTH(fill both horizontally and vertically)
+side - It determines on which side of the parent widget should the new widget be placed. Follwoing are it's possible values: TOP (default), BOTTOM, LEFT or RIGHT
+
+grid() method
+-------------
+- The grid geometry manager organizes widgets in a table-like structure in the parent widget. It puts the widgets in a 2-dimensional table.
+- The parent container is split into a number of rows and columns and each cell in the resulting table can hold a widget.
+- It is one of the most generally used geometry managers in Tkinter and we can use the grid() to implement the grid geometry,
+
+syntax: widget.grid(grid_options)
+-------
+
+grid_options (parameters)
+-------------------------
+row - It is the row to put the widget in. The default is the first row that is still empty
+column - It is the column to put the widget in. The default is 0 (leftmost column)
+rowspan - It specifies how many rows the widget occupies. The default value is 1.
+columnspan - It specifies how many columns the widget occupies. The default value is 1.
+sticky - It helps to center the widget in the cell. It can have the values like - N,S,E,W,NE,NW,SE,SW which are the compass directions indicating the sides and corners of the cell to which the widget sticks.
+
+place() method
+--------------
+- The place geometry manager organizes widgets by placing them in a specific position in the parent widget. It is the simplest of the three general geometry managers provided in Tkinter.
+- It allows you explicitly set the position and size of a window, either in absolute terms, or relative to another window.
+
+syntax: widget.place(place_options)
+-------
+
+place_options (parameters)
+--------------------------
+height, width - It specifies the height and width in pixels
+x,y - It specifies the horizontal and vertical offset in pixels
+relx,rely - It specifies the horizontal and vertical offset as a float between 0.0 and 1.0, basically as a fraction of the height and width of the parent widget.
+relheight, relwidth - It specifies the horizontal and vertical offset as a float between 0.0 and 1.0, basically as a fraction of the height and width of the parent widget
+bordermode - It has two possible values that help to manipulate the border - INSIDE(default) to indicate that other options refer to the parent's inside (ignoring the parent's border) or OUTSIDE otherwise.
+
+Label widget
+------------
+- Widget used to display text or images. The text can't be edited by the user.
+
+syntax: objectName = Label(parent,options)
+-------
+
+options - text, underline, justify(LEFT,CENTER,RIGHT), image, bg, fg, font
+
+font - used to specify and manipulate font family and size. we can specify font family and size as a tuple
+fg,bg - color values in the background and foreground options can be the color name of the color code.
+underline - to display an underline below the nth letter of the text, counting from 0, by setting this option to n. The default is underline = -1, which means no underlining. 
+
+eg. 
+# Creating label widget
+from tkinter import*
+window  = Tk()
+name = Label(window, text='PythonX - Learn Python',bg='white',fg='Blue',font=('Serif',16),underline=-1)
+name.pack()
+window.mainloop()
+
+- To create a create a label widget with images we use pillow module in python
+- Pillow module Installation - pip install pillow
+- Using pillow module, we can create image objects, read images, manipulate and modify images, and more.
+
+from PIL import Image
+img = Image.open('Python-Image.png')
+img.show()
+
+eg.
+
+from tkinter import*
+from PIL import Image, ImageTk
+
+window  = Tk()
+name = Label(window, text='PythonX - Learn Python',bg='Light grey',fg='Blue',font=('Serif',16),underline=-1)
+img = Image.open('Python-Image.png')
+logo = ImageTk.PhotoImage(img)
+image = Label(window,image=logo)
+name.pack()
+image.pack()
+window.mainloop()
+
+Entry Widget
+------------
+- It is used to accept single-line input from the user.
+
+syntax: objectName = Entry(parent,options)
+
+options: bg, fg, command, font, justify, show, state
+
+command - It specifies the method to be called everytime the user changes the state of the entry field
+show - Generally, the characters that the user types appear in the entry. But this option helps us to echo each character by the given character/symbol.
+state - It helps us to specify the state of the entry widget. The default is state=NORMAL, but you can use state=DISABLED to gray out the control and make it unresponsive. If the cursor is currently over the widget, the state is ACTIVE.
+
+Methods in Entry widget:
+------------------------
+- The entry widget also has some built-in methods that can be called on the entry object.
+
+get() - It returns the entry's current text as a string. It is used to fetch the value that has been entered into the entry field.
+delete() - It deletes characters from the widget.
+insert(index,'data') - It inserts string 'data' before the character at the given index.
+
+Button widget:
+--------------
+- To add a clickable buttons in our GUI.
+- Later they can be configured to call a function whenever they are clicked and therfore making your application interactive.
+
+syntax: objectName = Button(parent,options)
+-------
+
+options: text,bg,fg,command,font,height,weight,image,state
+
