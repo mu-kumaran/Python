@@ -196,3 +196,131 @@ syntax: objectName = Button(parent,options)
 
 options: text,bg,fg,command,font,height,weight,image,state
 
+eg.
+
+from tkinter import*
+from PIL import Image, ImageTk
+
+window  = Tk()
+name = Label(window, text='PythonX - Learn Python',bg='Light grey',fg='Blue',font=('Serif',16),underline=-1)
+img = Image.open('Python-Image.png')
+logo = ImageTk.PhotoImage(img)
+image = Label(window,image=logo)
+button = Button(window,text="Let's Start")
+username = Label(window,text='Username',font=('Serif',12))
+inputBox = Entry(window)
+
+name.pack()
+image.pack()
+username.pack(side=LEFT)
+inputBox.pack(side=RIGHT)
+button.place(x=100,y=500)
+window.mainloop()
+
+Frame widget:
+-------------
+- A frame is used as a container widget to organize other widgets.
+- It uses rectangular areas in the screen to organize the layout and to provide padding for these widgets.
+- Basically, we can create a frame widget in our parent window, and instead of adding the widgets directly to the parent window, we can add them to the frame container.
+
+syntax: objectName = Frame(parent,options)
+-------
+
+options: height,width,bg
+
+eg.
+from tkinter import*
+window  = Tk()
+frame = Frame(window)
+lbl = Label(frame,text="Inside the frame")
+btn = Button(frame,text="Inside the frame")
+frame.pack()
+lbl.pack(side=TOP)
+btn.pack(side=BOTTOM)
+window.mainloop()
+
+Checkbutton widget:
+-------------------
+- Checkbutton widget is used to display a number of options as checkboxes.
+- The user can then select one or more options by clicking the button corresponding to each option.
+
+syntax: objectName = Checkbutton(parent,options)
+-------
+
+options: offvalue, onvalue, state, text, image, command
+
+offvalue - A checkbutton's associated control variable will be set to 0 when it is cleared (off). You can supply an alternate value for the off state by setting offvalue to that value.
+
+onvalue - A checkbutton's associated control variable will be set to 1 when it is set(on). You can supply an alternate value for the on-state by setting onvalue to that value.
+
+state - It helps us to specify the state of the checkbutton widget. The default is state=NORMAL, but you can use state=DISABLED to gray out the control and make it unresponsive. If the cursor is currently over the widget, the state is ACTIVE
+
+text - It is the label displayed next to the checkbutton
+
+image - It is used to display a graphic image on the button.
+
+command - It specifies the method to be called everytime the user changes the state of the checkbutton
+
+Methods in Checkbutton widget:
+------------------------------
+- help to manipulate the widget based on some interaction
+
+deselect() - It clears the selected check button
+
+invoke() - We can call this method to get the same actions that would occur if the user clicked on the checkbutton to change its state
+
+select() - It sets/checks the checkbutton
+
+eg.
+from tkinter import*
+
+window = Tk()
+lbl = Label(window,text="Choose your favourite programming languages:")
+frame = Frame(window)
+python = Checkbutton(frame,text='Python')
+java = Checkbutton(frame,text='Java')
+js = Checkbutton(frame,text='Javascript')
+cpp = Checkbutton(frame,text='C++')
+
+lbl.pack()
+frame.pack()
+python.pack()
+java.pack()
+js.pack()
+cpp.pack()
+window.mainloop()
+
+Radiobutton widget:
+-------------------
+- Radiobutton widget is used to display a number of options as radio buttons.
+- It shows many possible selections to be user and let the user choose only one of them.
+
+syntax: objectName = Radiobutton(parent,options)
+-------
+options: text, image, command, state, variable, value
+
+variable - It is the control variable that this radio button shares with the other radio buttons in the group. This can be either an IntVar or a StringVar
+
+value - When a radiobutton is turned on by the user, its control variable is set to its current value option. If the control variable is an IntVar, give each radiobutton in the group a different integer value option. If the control variable is a StringVar, give each radiobutton a different string value option.
+
+Methods in Radiobutton: deselect(), invoke(), select() (already discussed above)
+
+eg. 
+from tkinter import*
+
+window = Tk()
+lbl = Label(window,text="Select your gender:")
+frame = Frame(window)
+var = StringVar()
+male = Radiobutton(frame,text='Male',variable=var,value='M')
+female = Radiobutton(frame,text='Female',variable=var,value='F')
+
+lbl.pack()
+frame.pack()
+male.pack()
+female.pack()
+window.mainloop()
+
+
+
+
