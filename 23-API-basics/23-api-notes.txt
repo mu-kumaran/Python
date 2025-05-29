@@ -48,7 +48,7 @@ What's an REST API?
 REST API - an Brief introduction: (REST - Representational State Transfer)
 ---------------------------------
 - It is a web based API call
-- Like a Input-Output model, It is a Client-Request ----> Server-Response model via http protocol
+- Like a Input-Output model, It is a Client-Request ----> Server-Response model(ie. Client-Server interaction) via http protocol
 - Server giving the response is called Resource/End points/Routing points
 - In REST api's we use api keys and url's to access Server
 
