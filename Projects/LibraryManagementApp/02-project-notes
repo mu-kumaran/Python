@@ -14,6 +14,7 @@ Project flow
 2. Lend a Book
 3. Add a Book
 4. Return a Book
+
 - Depending on the choice entered, we would need to perform the operation and return the details to the output screen.
 - The above process has to be done repeatedly until the user quits.
 
