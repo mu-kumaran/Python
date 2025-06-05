@@ -1,26 +1,34 @@
 import pandas as pd
-from nba_api.stats.static import teams
 
-nba_teams = teams.get_teams()
+df = pd.read_csv("new_songs.csv")
+df1 = pd.read_excel("sales.xlsx")
+# print(df1.head())
 
-def dict_nba(nba_teams):
-    dt = {}
-    temp_list = []
+songs = {
+    'Artist':['MJ','Pink Floyd','Meat Loaf','AC/DC','Eagels'],
+    'Album':['Thriller','Back in Black','Darkside of the Moon','The BodyGuard','Bat Out of Hell'],
+    'Released':[1982,1980,1973,1992,1977],
+    'Genre':['Pop','Rock','Metal','Light','Disco'],
+    'Length':['10 mins','20 mins','5 mins','8 mins','12 mins']
+    }
 
-    for i in nba_teams[0].keys():
-        for j in range(len(nba_teams)):
-            temp_list.append(nba_teams[j].get(i))
-        dt[i] = temp_list.copy()    
-        temp_list.clear()
+df2 = pd.DataFrame(songs)
+print(df2)
 
-    del temp_list
-    return dt
+new = df2[["Length"]]
+# print(new)
 
+new1 = df2[['Length','Genre','Artist']]
+# print(new1)
 
-df_teams = pd.DataFrame(dict_nba(nba_teams))
-print(df_teams.head())
+new2 = df2['Length']
+# print(new2)
 
-df_warriors = df_teams[df_teams["nickname"]=="Warriors"]
-print(df_warriors)
-print(df_warriors['id'].values[0])
-print(df_warriors[['id']].values[0][0])
+s = df2['Length'].unique()
+print(s)
+
+t1 = df2[['Released']]>1980
+print(t1)
+
+t = df2[df2['Released']>1980]
+print(t)

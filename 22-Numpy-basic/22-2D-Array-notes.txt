@@ -84,3 +84,19 @@ print(A)
 print(A.shape)
 print(ATrans)
 print(ATrans.shape)
+
+Matrix determinant:
+------------------
+- To find the determinant of the matrix
+eg.
+A = np.array([[1,2],[3,4]])
+det = np.linalg.det(A)
+print(det)
+
+Matrix Inverse:
+---------------
+- To find the inverse of the matrix
+eg. 
+A = np.array([[1,2],[3,4]])
+A_inv = np.linalg.inv(A)
+print(A_inv)

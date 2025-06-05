@@ -5,6 +5,7 @@ Overview of HTTP:
 - If your request is successful, the server will send the object to the client in an HTTP response. 
 - This includes information like the type of the resource, the length of the resource, and other information.
 - The HTTP protocol allows you to send and receive information through the web including webpages, images, and other web resources.
+- Resources are nothing but the files stored in the location. Eg. index.html, images.png, file.txt etc
 
 Uniform Resource Locator: URL
 -----------------------------
@@ -15,9 +16,20 @@ Uniform Resource Locator: URL
 
 - We may also hear the term Uniform Resource Identifier (URI), URL are actually a subset of URIs. Another popular term is endpoint, this is the URL of an operation provided by a Web server.
 
+Request 
+-------
+The process can be broken into the request and response process. The request using the get method is partially illustrated below. In the start line we have the GET method, this is an HTTP method. Also the location of the resource /index.html and the HTTP version. The Request header passes additional information with an HTTP request:
+
+Request Message:
+Request Start line: Get/index.html HTTP/1.0
+Request Header: User-Agent: python-requests/2.21.0
+                            Accept-Encoding:gzip, deflate
+
+- When an HTTP request is made, an HTTP method is sent, this tells the server what action to perform. A list of several HTTP methods is shown below. We will go over more examples later.
+
 http methods: get, post, put, delete
 -------------
-get - to read and view the content. eg. to get a news data
-post - to insert the data. eg. to add product newly to the cart
-put - to update the data. eg. to cancel the transactions, to add/remove the existing product in the shopping cart
-delete - to delete the data.  eg. to empty the cart
+get - Retrieves data from the server. eg. to get a news data
+post - Submits data to the server. eg. to add product newly to the cart
+put - Updates data already on server. eg. to cancel the transactions, to add/remove the existing product in the shopping cart
+delete - Deletes data from the server.  eg. to empty the cart
