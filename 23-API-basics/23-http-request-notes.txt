@@ -33,3 +33,41 @@ get - Retrieves data from the server. eg. to get a news data
 post - Submits data to the server. eg. to add product newly to the cart
 put - Updates data already on server. eg. to cancel the transactions, to add/remove the existing product in the shopping cart
 delete - Deletes data from the server.  eg. to empty the cart
+
+Response
+--------
+The figure below represents the response; the response start line contains the version number HTTP/1.0, a status code (200) meaning success, followed by a descriptive phrase (OK). The response header contains useful information. Finally, we have the response body containing the requested file, an  HTML  document. It should be noted that some requests have headers.
+
+Response Message
+----------------
+Response Start line - HTTP/1.0 200 OK
+Response Header - Server: Apache-
+                  Cache: UNCACHEABLE
+Response Body - <!DOCTYPE html>
+                <html>
+                <body>
+                <h1>My First Heading</h1>
+                <p>My First Paragraph</p>
+                </body>
+                </html>
+
+- Some status code examples are shown in the table below, the prefix indicates the class. 
+1xx - represents informational responses
+2xx - represents successful responses
+3xx - represents redirects
+4xx - represents client errors
+5xx - represents server errors
+Most commonly used status codes are:
+
+200 - success/OK
+201 - CREATED - used in POST or PUT methods.
+304 - NOT MODIFIED - used in conditional GET requests to reduce the bandwidth use of the network. Here, the body of the response sent should be empty.
+400 - BAD REQUEST - This can be due to validation errors or missing input data.
+401- UNAUTHORIZED - This is returned when there is no valid authentication credentials sent along with the request.
+403 - FORBIDDEN - sent when the user does not have access (or is forbidden) to the resource.
+404 - NOT FOUND - Resource method is not available.
+500 - INTERNAL SERVER ERROR - server threw some exceptions while running the method.
+502 - BAD GATEWAY - Server was not able to get the response from another upstream server.
+
+
+

@@ -72,7 +72,7 @@ eg. A = {1,2,3,4,5}
 Built-in functions
 ------------------
 - len(), min(), max() are already known
-- sorted(): returns a new sorted list form elements in th set. It does not sort the set itself
+- sorted(): returns a new sorted list form elements in the set. It does not sort the set itself
 - sum(): returns the sum of all elements in the set
 
 eg. age = {23,22,34,36,24,41}
