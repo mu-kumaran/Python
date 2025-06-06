@@ -72,3 +72,27 @@ PIL.Image.open() opens the image.
 
 .show() displays it.
 """
+
+# Get Request with URL parameters
+url_get = "https://www.httpbin.org/get"
+payload={"name":"Joseph","ID":"123"}
+rr = requests.get(url_get,params = payload)
+print(rr.url)
+print(rr.status_code)
+print(rr.request.body)
+print(rr.headers['Content-Type'])
+print(rr.content)
+print(rr.text)
+print(rr.json())
+print(rr.json()['args'])
+
+#Post Request
+url_post = "https://www.httpbin.org/post"
+r_post = requests.post(url_post,data=payload)
+print(r_post.url)
+print(r_post.status_code)
+print(r_post.request.body)
+print(r_post.headers['Content-Type'])
+print(r_post.json())
+print(r_post.text)
+print(r_post.json()['form'])
