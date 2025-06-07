@@ -1,7 +1,19 @@
-V= {'A','B'}
-V.add('C')
-print(V)
+from bs4 import BeautifulSoup
+import requests
 
-A = [1,'a']
-B = [2,1,'d']
-print(A+B)
+url = 'https://en.wikipedia.org/wiki/IBM'
+
+response = requests.get(url)
+
+print(response.status_code)
+
+html_content = response.text
+
+print(html_content[:500])
+
+soup = BeautifulSoup(html_content,'html.parser')
+
+links = soup.find_all('a')
+
+for link in links:
+    print(link.text)
